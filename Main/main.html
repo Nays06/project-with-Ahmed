@@ -17,11 +17,25 @@
   <body>
     <header>
       <div class="headBlock1">
-        <div class="languages">
+        <div class="langAndCurren">
           <span class="lang">RU /</span>
           <span class="currency">$</span>
           <img src="./images/arrowImg.svg" class="arrowImg" />
         </div>
+
+        <div class="langAndCurrenChange" style="display: none;">
+            <div class="changeLanguage">
+                <button class="changeBtn" style="background-color: #77be1d;">Russian (RU)</button>
+                <button class="changeBtn">English (EN)</button>
+            </div>
+            <div class="separator"></div>
+            <div class="changeCurrency">
+                <button class="changeBtn" style="background-color: #77be1d;">$ </button>
+                <button class="changeBtn">€</button>
+                <button class="changeBtn">₽ </button>
+            </div>
+        </div>
+
         <a href="">Накопительный счет</a>
         <nav>
           <a href="">Отзывы</a>
@@ -51,33 +65,20 @@
         </div>
       </div>
     </header>
-
+        <div class="slider">
+            <div class="arrowLeft"><img src="./images/arrowLeftImg.svg" alt=""></div>
+            <img src="./images/slideImg1.png" class="slideImg" id="firstSlideImg" style="transition: all 0.6s;">
+            <img src="./images/slideImg2.png" class="slideImg">
+            <img src="./images/slideImg3.png" class="slideImg">
+            <div class="arrowRight"><img src="./images/arrowRightImg.svg" alt=""></div>
+        </div>
     <main>
-      <div class="smallProductCardsConteiner">
-          <!-- <div class="topProductCard">
-            <img src="./images/productImg1.png" class="productImg" />
-            <div class="topBlock">Top <img src="./images/lightning.svg" alt="">4</div>
-            <button class="addCardBtn">В корзину</button>
-            <button class="addFavouritesBtn"><img src="./images/likeImg.svg"></button>
-            <div class="productCard_podBlock1">
-              <span class="priceWithDiscount">3400 Р</span>
-              <span class="discount">-15%</span>
-              <span class="priceWithoutDiscount">4000 Р</span>
-            </div>
-            <div class="productCard_podBlock2">
-              <span class="productName">XBOX GAME PASS ULTIMATE + EA PLAY 14 JOURS | RENOUVELL<span class="ellipsis">...</span></span>
-            </div>
-            <div class="productCard_podBlock3">
-              <div class="category">
-                <div class="bullet"></div>
-                <span>Буст</span>
-              </div>
-              <div class="category">
-                <div class="bullet"></div>
-                <span>Origin</span>
-              </div>
-            </div>
-          </div> -->
+        
+
+        
+      <div class="parentCardsConteiner">
+        <h1>Top <img src="./images/lightning.svg" style="width: 1.2%;"> 4</h1>
+        <div class="smallProductCardsConteiner"></div>
       </div>
     </main>
 

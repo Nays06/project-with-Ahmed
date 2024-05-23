@@ -7,6 +7,7 @@ body {
 }
 /* Header styles */
 header {
+  position: relative;
   max-width: 1400px;
   margin-inline: auto;
   margin-top: 20px;
@@ -23,11 +24,55 @@ header h1 {
   text-align: center;
   gap: 10px;
 }
-.languages {
+.langAndCurren {
   display: flex;
   justify-content: left;
   align-items: center;
   gap: 4px;
+}
+.arrowImg{
+    transition: all 0.2s;
+}
+.langAndCurrenChange {
+  position: absolute;
+  top: 30px;
+  left: 2%;
+  width: 140px;
+  background-color: #0c061f;
+  border-radius: 8px;
+  padding: 6px;
+  gap: 4px;
+  opacity: 0;
+  transition: all 0.2s;
+  z-index: 1;
+}
+.changeLanguage {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 4px;
+}
+.changeCurrency {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: gray;
+  border-radius: 4px;
+  margin-block: 4px;
+}
+.changeBtn {
+  background: none;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+  cursor: pointer;
+  padding-block: 5px;
+}
+.changeBtn:hover {
+  background-color: #77be1d;
 }
 .currency {
   color: #77be1d;
@@ -112,8 +157,65 @@ main {
   gap: 66px;
 }
 
+/* Slider styles */
+/* .parentSliderBlock{
+    background-color: #649e18;
+    max-width: 1600px;
+    margin-inline: auto;
+    overflow: hidden;
+} */
+.slider{
+    max-width: 1600px;
+    max-height: 700px;
+    margin-inline: auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s;
+}
+.arrowLeft{
+    position: absolute;
+    left: 9.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(196, 196, 196, 0.05);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+.arrowRight{
+    position: absolute;
+    right: 9.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(196, 196, 196, 0.05);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+/* .slide{
+    height: 100%;
+} */
+.slideImg{
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 24px;
+}
+
+/* Slider styles */
+
+
 /* Product cards styles */
-.topProductCard {
+.productCard {
   height: 570px;
   position: relative;
   display: flex;
@@ -128,7 +230,7 @@ main {
   position: absolute;
   top: 10px;
   left: 10px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 4px;
@@ -157,6 +259,9 @@ main {
   cursor: pointer;
   transition: all 0.2s;
 }
+.addCardBtn:hover {
+  background-color: #649e18;
+}
 .addFavouritesBtn {
   width: 12%;
   height: auto;
@@ -169,8 +274,11 @@ main {
   padding: 8px;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
   transition: all 0.2s;
+  cursor: pointer;
+}
+.addFavouritesBtn:hover {
+  background-color: rgb(235, 234, 234);
 }
 .addFavouritesBtn img {
   width: 100%;
@@ -188,10 +296,11 @@ main {
   text-decoration: line-through;
 }
 .productCard_podBlock3 {
+  width: 100%;
   position: absolute;
   bottom: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  gap: 36px;
   align-items: center;
 }
 .category {
