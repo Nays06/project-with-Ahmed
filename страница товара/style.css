@@ -1,0 +1,664 @@
+*{
+    font-family: "Manrope", sans-serif;
+}
+
+body{
+    /* background-image: url(img/bg-ForzaHorizon4.jpg); */
+    background-size: 100% 1080px;
+    background-repeat: no-repeat;
+    margin: 0;
+    color: white;
+    padding: 0;
+    background-color: #06040F;
+}
+
+.temnee-bg{
+    width: 100%;
+    height: 1080px;
+    background: linear-gradient(180deg, rgba(4, 0, 14, 0) 0.56%, #06030F 63.8%);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
+
+header{
+    margin-inline: auto;
+    margin-top: 20px;
+    border-bottom: 1px solid #FFFFFF1A;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img, header h1{cursor: pointer;}
+
+.headBlock1{
+    display: grid;
+    grid-template-columns: 0.3fr 0.4fr 1fr 0.4fr;
+    text-align: center;
+    gap: 10px;
+}
+.languages{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 4px;
+}
+.currency{
+    color: #77BE1D;
+}
+nav{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+a{
+    text-decoration: none;
+    transition: all 0.3s;
+    color: white;
+}
+a:hover{
+    color: #77BE1D;
+}
+.user{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 8px;
+}
+.avatar{
+    height: 34px;
+    width: 34px;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+.headBlock2{
+    display: grid;
+    grid-template-columns: 0.25fr 1fr 0.12fr 0.14fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+.logoBlock{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 6px;
+}
+.searchBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color:  #0c061f;
+    opacity: 0.8;
+    padding-right: 6px;
+    gap: 10px;
+}
+.searchInp{
+    width: 100%;
+    height: 34px;
+    border: none;
+    padding: 8px;
+    padding-left: 30px;
+    border-radius: 12px;
+    outline: none;
+    background: none;
+    color: white;
+}
+.free{
+    color: #77BE1D;
+    text-align: right;
+}
+.saveBlock{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+}
+
+main{
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-img{
+    width: 350px;
+    height: 465px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 100%;
+    }
+}
+
+/* .product-information{
+    display: flex;
+} */
+
+.product-other{
+    margin-left: 70px;
+}
+
+.product-title{
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.product-v-nalichii{
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.product-v-nalichii-tochka{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #01CB62;
+}
+
+.product-prices{
+    width: 315px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-now-price{
+font-size: 36px;
+font-weight: 700;
+}
+
+.product-skidka{
+font-size: 24px;
+font-weight: 700;
+color: #77BE1D;
+}
+
+.product-old-price{
+font-size: 24px;
+font-weight: 700;
+color: #FFFFFF4D;
+}
+
+.product-deystvia{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.product-buy{
+    border-radius: 15px;
+    padding: 23px 40px 23px 40px;
+    background-color: #77BE1D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.product-to-back{
+    border-radius: 15px;
+    padding: 23px 40px 23px 40px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FFFFFF1A;
+    margin-left: 15px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.product-like{
+    margin-left: 30px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.product-info{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.product-info td{
+    padding-right: 60px;
+    height: 30px;
+}
+
+.product-tr1 td{
+font-size: 18px;
+font-weight: 400;
+}
+
+.product-tr2 td{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.product-deystvia-2{
+    display: flex;
+}
+
+.product-moment-dost-but{
+    border-radius: 15px;
+    padding: 23px 40px 23px 40px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FFFFFF1A;
+    color: #97E238;
+    font-size: 20px;
+    font-weight: 400;
+    user-select: none;
+    cursor: pointer;
+}
+
+.product-garantia{
+    font-size: 20px;
+    font-weight: 600;
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.product-garantia-galochka{
+    width: 22px;
+    height: 22px;
+    border: 1px solid #FFFFFF1A;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-photo-videos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+    overflow-x: scroll;
+    user-select: none;
+}
+
+.product-photo-videos::-webkit-scrollbar {
+    display: none;
+  }
+
+.product-photo-video{
+    border-radius: 15px;
+    width: 315px;
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    img{
+        width: 100%;
+        -webkit-user-drag: none;
+        cursor: pointer;
+        height: 100%; 
+        width: auto; 
+        object-fit: contain;
+    }
+}
+
+.product-photo-video:not(:first-child) {
+    margin-left: 20px;
+  }
+
+.product-photo-video-play{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #77BE1D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.product-photo-video-playy{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #77BE1D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    z-index: 5;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1500;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Добавьте светлый фон для видимости */
+}
+
+.modal-content{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Скрываем все слайды по умолчанию */
+.mySlides {
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Стилизуем кнопки "дальше" и "назад" */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* Позиционирование кнопки "далее" справа */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* Позиционирование кнопки "назад" слева */
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* Появление и исчезание кнопок при наведении */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* Стили для "закрыть" */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* ... */
+
+.product-ostas-title{
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 400;
+    color: #868686;
+    margin-top: 50px;
+}
+
+.product-osta{
+    user-select: none;
+    cursor: pointer;
+}
+
+.product-osta-left{
+    padding-bottom: 15px;
+    padding-right: 15px;
+}
+
+.product-osta-center{
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.product-osta-right{
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+.product-osta-left.active,
+.product-osta-center.active,
+.product-osta-right.active{
+    border-bottom: 2px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.product-ostas-container{
+    margin-top: 60px;
+}
+
+.product-opisanie{
+    width: 1000px;
+}
+
+.product-opisanie-title{
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.product-opisanie-txt{
+    font-size: 17px;
+    font-weight: 400;
+    color: #9D9AA6;
+    line-height: 1.6;
+}
+
+.product-sisTreb-table{
+    border-collapse: collapse;
+}
+
+.product-sisTreb-table td{
+    padding: 10px 30px 10px 15px;
+    vertical-align: middle;
+}
+  
+.product-sisTreb-title{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-activate-title{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-activate-input{
+    input{
+        margin-top: 10px;
+        width: 500px;
+        height: 30px;
+        background-color:  #0c061f;
+        outline: none;
+        border: 2px solid #9D9AA6;
+        color: #97E238;
+    }
+}
+
+.vam-budet-interesno{
+    margin-top: 50px;
+}
+
+.vam-budet-interesno-title{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.vam-budet-interesno-cont{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .productImg {
+    width: 100%;
+  }
+  
+  .topBlock {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    background-color: black;
+    padding-inline: 10px;
+    padding-block: 6px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .addCardBtn {
+    width: 86%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    top: 69%;
+    left: 8%;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #77be1d;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .addCardBtn:hover {
+    background-color: #649e18;
+  }
+  .addFavouritesBtn {
+    width: 12%;
+    height: auto;
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 50%;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .addFavouritesBtn:hover {
+    background-color: rgb(235, 234, 234);
+  }
+  .addFavouritesBtn img {
+    width: 100%;
+  }
+  .productCard_podBlock1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .discount {
+    color: #77be1d;
+  }
+  .priceWithoutDiscount {
+    color: #3d394a;
+    text-decoration: line-through;
+  }
+  .productCard_podBlock3 {
+    /* width: 100%; */
+    /* position: absolute; */
+    bottom: 0;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .category {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .bullet {
+    width: 14px;
+    height: 14px;
+    background-color: #3d394a;
+    border-radius: 50%;
+  }
+
+.product-img2{
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 100%;
+    }
+}

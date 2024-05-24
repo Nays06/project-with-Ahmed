@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div style="width: 1400px;">
+            <div class="headBlock1">
+                <div class="languages">
+                    <span class="lang">RU /</span>
+                    <span class="currency">$</span>
+                    <img src="../Main/images/arrowImg.svg" class="arrowImg">
+                </div>
+                <a href="">Накопительный счет</a>
+                <nav>
+                    <a href="">Отзывы</a>
+                    <a href="">Гарантии</a>
+                    <a href="">Как купить</a>
+                    <a href="">Накопительная</a>
+                    <a href="">Зарабатывай</a>
+                </nav>
+                <div class="user">
+                    <span id="userName">Hanzed Rules</span>
+                    <div class="avatar"></div>
+                </div>
+            </div>
+            <div class="headBlock2">
+                <div class="logoBlock" onclick="toMain()">
+                    <img src="../Main/images/logo.svg" alt="">
+                    <h1>Playnchill</h1>
+                </div>
+                <div class="searchBlock">
+                    <input class="searchInp" type="text" placeholder="Поиск">
+                    <img src="../Main/images/searchImg.svg" alt="">
+                </div>
+                <a class="free" href="">Бесплатно</a>
+                <div class="saveBlock">
+                    <img src="../Main/images/favouritesImg.svg" alt="">
+                    <img src="../Main/images/basketImg.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="product-information">
+            <div style="display: flex;">
+                <div class="product-img">
+                    <img src="" style="height: auto; width: 100%; object-fit: contain;">
+                </div>
+    
+                <div class="product-other">
+                    <div class="product-title"></div>
+    
+                    <div class="product-v-nalichii">
+                        <div class="product-v-nalichii-tochka"></div>
+    
+                        В наличии
+                    </div>
+    
+                    <div class="product-prices">
+                        <div class="product-now-price"></div>
+    
+                        <div class="product-skidka"></div>
+    
+                        <div class="product-old-price"></div>
+                    </div>
+    
+                    <div class="product-deystvia">
+                        <div class="product-buy">Купить</div>
+    
+                        <div class="product-to-back">В корзину</div>
+    
+                        <div class="product-like">
+                            <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.79822 2C3.62151 2 2 3.60676 2 5.41942C2 6.29853 2.37841 7.16006 3.08284 7.80887L10.5 14.6405L17.9172 7.80887C18.6216 7.16006 19 6.29853 19 5.41942C19 3.60676 17.3785 2 15.2018 2C14.1691 2 13.1936 2.3786 12.4864 3.02996L11.1775 4.23555C10.7946 4.58815 10.2054 4.58815 9.82252 4.23555L8.51361 3.02996C7.80642 2.3786 6.8309 2 5.79822 2ZM0 5.41942C0 2.35052 2.67497 0 5.79822 0C7.31068 0 8.77606 0.552629 9.86856 1.55887L10.5 2.14046L11.1314 1.55887C12.2239 0.552628 13.6893 0 15.2018 0C18.325 0 21 2.35052 21 5.41942C21 6.88451 20.3674 8.27118 19.2721 9.27996L11.1775 16.7355C10.7946 17.0882 10.2054 17.0882 9.82252 16.7355L1.72789 9.27996C0.632635 8.27117 0 6.88451 0 5.41942Z" fill="white"/>
+                                </svg>                            
+                        </div>
+                    </div>
+    
+                    <div class="product-info">
+                        <table>
+                            <tr class="product-tr1">
+                                <td>Жанр</td>
+                                <td>Платформа</td>
+                                <td>Регион активации</td>
+                                <td>Тип товара</td>
+                            </tr>
+    
+                            <tr class="product-tr2">
+                                <td></td>
+                                <td>Steam</td>
+                                <td>Страны СНГ</td>
+                                <td>Учетная запись</td>
+                            </tr>
+                        </table>
+                    </div>
+    
+                    <div class="product-deystvia-2">
+                        <div class="product-moment-dost-but">
+                            Моментальная доставка
+                        </div>
+    
+                        <div class="product-garantia">
+                            <div class="product-garantia-galochka">
+                                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5837 4.96466L8.49779 0L10 1.51767L3.5837 8L0 4.37942L1.50221 2.86175L3.5837 4.96466Z" fill="#77BE1D"/>
+                                </svg>
+                            </div>
+    
+                            Гарантия качества
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-photo-videos">
+                <div style="width: 200%; display: flex;">
+                    <div class="product-photo-video" onclick="currentSlide(1)"><img src="" alt=""></div>
+                    <div class="product-photo-video" onclick="currentSlide(2)"><img src="" alt=""></div>
+                    <div class="product-photo-video" onclick="currentSlide(3)"><img src="" alt=""></div>
+                    <div class="product-photo-video" onclick="currentSlide(4)"><img src="" alt=""></div>
+                    <div class="product-photo-video" onclick="currentSlide(5)" id="videooo">
+                        <div class="product-photo-video-play">
+                            <div class="product-photo-video-playy">
+                                <svg width="25" height="29" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M23.2435 16.3123L23.2402 16.3143L3.90243 28.0215C2.63108 28.7903 0.957282 27.8734 0.957282 26.2636V2.84903C0.957282 1.24173 2.62841 0.322778 3.90216 1.09415L3.90222 1.09419L23.2402 12.8015L23.2435 12.8034C23.535 12.977 23.78 13.2297 23.9516 13.538C24.1232 13.8464 24.2144 14.1983 24.2144 14.5579C24.2144 14.9174 24.1232 15.2694 23.9516 15.5778C23.78 15.8861 23.535 16.1387 23.2435 16.3123Z" fill="white" stroke="#77BE1D" stroke-width="1.05714"/>
+                                    </svg>
+                                    
+                            </div>
+                        </div>
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-ostas">
+            <div class="product-ostas-title">
+                <div class="product-osta">
+                    <div class="product-osta-left active">Описание товара</div>
+                </div>
+                <div class="product-osta">
+                    <div class="product-osta-center">Системные требования</div>
+                </div>
+                <div class="product-osta">
+                    <div class="product-osta-right">Активация</div>
+                </div>
+                
+                
+            </div>
+
+            <div class="product-ostas-container"></div>
+        </div>
+
+        <div class="vam-budet-interesno">
+            <div class="vam-budet-interesno-title">Вам будет интересно</div>
+
+            <div class="vam-budet-interesno-cont"></div>
+        </div>
+    </main>
+
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+    <div class="modal-cont" style="width: 100%; height: 100%;">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+           <!-- Слайды для изображений -->
+           <div class="mySlides">
+              <img src="" style="width:1300px" class="product-gallery-img">
+           </div>
+    
+           <div class="mySlides">
+            <img src="" style="width:1300px" class="product-gallery-img">
+         </div>
+    
+         <div class="mySlides">
+            <img src="" style="width:1300px" class="product-gallery-img">
+         </div>
+    
+         <div class="mySlides">
+            <img src="" style="width:1300px" class="product-gallery-img">
+         </div>
+           <!-- Слайд для видео -->
+           <div class="mySlides">
+              <video controls preload="metadata" style="width:1300px" id="videooo1">
+                 
+              </video>
+           </div>
+           <!-- кнопки "далее" и "назад" -->
+           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+           <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+ </div>
+
+
+
+
+
+
+    <div class="temnee-bg"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
