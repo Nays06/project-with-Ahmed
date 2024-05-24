@@ -134,19 +134,21 @@ arrowImg.addEventListener("click", () => {
 // Slider script //
 const arrowLeft = document.querySelector(".arrowLeft");
 const arrowRight = document.querySelector(".arrowRight");
-const firstSlideImg = document.getElementById("firstSlideImg");
+const firstSlide = document.getElementById("firstSlide");
+const slideBlock = document.querySelector(".slide_block");
+
 let index = 2;
 let indent = 0;
 arrowLeft.addEventListener("click", () => {
     if(index > 1){
-        firstSlideImg.style.marginLeft = `${indent += 160.5}%`
+        firstSlide.style.marginLeft = `${indent += 160.5}rem`
         index--;
     }
 });
 
 arrowRight.addEventListener("click", () => {
     if(index < 3){
-        firstSlideImg.style.marginLeft = `${indent -= 160.5}%`
+        firstSlide.style.marginLeft = `${indent -= 160.5}rem`
         index++;
     }
 })

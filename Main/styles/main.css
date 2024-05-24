@@ -158,12 +158,7 @@ main {
 }
 
 /* Slider styles */
-/* .parentSliderBlock{
-    background-color: #649e18;
-    max-width: 1600px;
-    margin-inline: auto;
-    overflow: hidden;
-} */
+
 .slider{
     max-width: 1600px;
     max-height: 700px;
@@ -188,6 +183,7 @@ main {
     background-color: rgba(196, 196, 196, 0.05);
     backdrop-filter: blur(10px);
     cursor: pointer;
+    z-index: 1;
 }
 .arrowRight{
     position: absolute;
@@ -201,16 +197,58 @@ main {
     background-color: rgba(196, 196, 196, 0.05);
     backdrop-filter: blur(10px);
     cursor: pointer;
+    z-index: 1;
 }
-/* .slide{
-    height: 100%;
-} */
 .slideImg{
-    width: 100%;
-    /* height: 100%; */
+    /* width: 100%; */
     border-radius: 24px;
 }
+.firstSlide, .slide{
+  /* max-width: 1225px; */
+  position: relative;
+  transition: all 0.6s;
+}
+.slide_information{
+  display: grid;
+  position: absolute;
+  top: 36%;
+  left: 6%;
+  gap: 10px;
+}
+.slide_priceBlock{
+  display: flex;
+  gap: 50px;
+}
 
+.slidePriceWithDiscount{
+  font-size: 22px;
+}
+.slideDiscount{
+  font-size: 22px;
+  color: #77be1d;
+}
+.slidePriceWithoutDiscount{
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.3); 
+  text-decoration: line-through;
+}
+.slideBtnsBlock{
+  display: flex;
+  gap: 20px;
+}
+.slideBtn{
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.slideBtn:hover{
+  background-color: white;
+  color: black;
+}
 /* Slider styles */
 
 
