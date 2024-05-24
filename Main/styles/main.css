@@ -143,6 +143,12 @@ a:hover {
   align-items: center;
   gap: 10px;
 }
+.header_borderBottom{
+  height: 1px;
+  width: 100vw;
+  margin-top: 20px;
+  background-color: rgb(56, 56, 56);
+}
 /* Header styles */
 
 /* Slider styles */
@@ -150,6 +156,7 @@ a:hover {
   max-width: 1600px;
   max-height: 700px;
   margin-inline: auto;
+  margin-block: 60px;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -157,7 +164,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   transition: all 0.6s;
-  padding-bottom: 40px;
+  padding-bottom: 56px;
 }
 .arrowLeft{
   position: absolute;
@@ -172,6 +179,7 @@ a:hover {
   backdrop-filter: blur(10px);
   cursor: pointer;
   z-index: 1;
+  transition: all 0.2s;
 }
 .arrowRight{
   position: absolute;
@@ -186,6 +194,10 @@ a:hover {
   backdrop-filter: blur(10px);
   cursor: pointer;
   z-index: 1;
+  transition: all 0.2s;
+}
+.arrowRight:hover, .arrowLeft:hover{
+  background-color: rgba(196, 196, 196, 0.1);
 }
 .slideImg{
   /* width: 100%; */
@@ -197,11 +209,12 @@ position: relative;
 transition: all 0.6s;
 }
 .slide_information{
+  width: 86%;
 display: grid;
 position: absolute;
 top: 36%;
 left: 6%;
-gap: 10px;
+gap: 16px;
 }
 .slide_priceBlock{
 display: flex;
@@ -227,7 +240,8 @@ gap: 20px;
 .slideBtn{
 border: none;
 background-color: rgba(255, 255, 255, 0.05);
-padding: 20px;
+padding-inline: 28px;
+padding-block: 24px;
 border-radius: 12px;
 font-size: 16px;
 cursor: pointer;
@@ -261,7 +275,6 @@ color: black;
 main {
   max-width: 1400px;
   margin-inline: auto;
-  margin-top: 100px;
 }
 .smallProductCardsConteiner {
   display: grid;
@@ -372,3 +385,58 @@ main {
 /* Product cards styles */
 
 /* Main styles */
+
+
+/*Media requests*/
+@media (max-width: 1500px) {
+  .arrowLeft{
+    position: absolute;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(196, 196, 196, 0.05);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.2s;
+  }
+  .arrowRight{
+    position: absolute;
+    right: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(196, 196, 196, 0.05);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.2s;
+  }
+  .addCardBtn {
+    width: 86%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    top: 60%;
+    left: 8%;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #77be1d;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+}
+/*Media requests*/
