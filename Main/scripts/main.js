@@ -56,9 +56,9 @@ function createProductCards() {
                                     <button id="addCardBtn${i}" class="addCardBtn">В корзину</button>
                                     <button id="addFavouritesBtn${i}" class="addFavouritesBtn"><img src="./images/likeImg.svg"></button>
                                     <div class="productCard_podBlock1">
-                                        <span class="priceWithDiscount">${productCards[i].priceWithDiscount}</span>
-                                        <span class="discount">${productCards[i].discount}</span>
-                                        <span class="priceWithoutDiscount">${productCards[i].priceWithoutDiscount}</span>
+                                        <span class="product_priceWithDiscount">${productCards[i].priceWithDiscount}</span>
+                                        <span class="product_discount">${productCards[i].discount}</span>
+                                        <span class="product_priceWithoutDiscount">${productCards[i].priceWithoutDiscount}</span>
                                     </div>
                                     <div class="productCard_podBlock2">
                                         <span class="productName">${productCards[i].productName}</span>
@@ -115,8 +115,9 @@ allProductCards.forEach((productCard) => {
 // Change language and currency script//
 const arrowImg = document.querySelector(".arrowImg");
 const langAndCurrenChange = document.querySelector(".langAndCurrenChange");
+const langAndCurren = document.querySelector(".langAndCurren");
 
-arrowImg.addEventListener("click", () => {
+langAndCurren.addEventListener("click", () => {
   if (langAndCurrenChange.style.display == "none") {
     langAndCurrenChange.style.display = "block";
     setTimeout(() => {
