@@ -31,8 +31,8 @@ header h1 {
   align-items: center;
   gap: 4px;
 }
-.arrowImg{
-    transition: all 0.2s;
+.arrowImg {
+  transition: all 0.2s;
 }
 .langAndCurrenChange {
   position: absolute;
@@ -144,7 +144,7 @@ a:hover {
   align-items: center;
   gap: 10px;
 }
-.header_borderBottom{
+.header_borderBottom {
   height: 1px;
   width: 100%;
   margin-top: 20px;
@@ -153,7 +153,7 @@ a:hover {
 /* Header styles */
 
 /* Slider styles */
-.slider{
+.slider {
   max-width: 1600px;
   max-height: 700px;
   margin-inline: auto;
@@ -167,7 +167,7 @@ a:hover {
   transition: all 0.6s;
   padding-bottom: 56px;
 }
-.arrowLeft{
+.arrowLeft {
   position: absolute;
   left: 9.2%;
   display: flex;
@@ -182,7 +182,7 @@ a:hover {
   z-index: 1;
   transition: all 0.2s;
 }
-.arrowRight{
+.arrowRight {
   position: absolute;
   right: 9.2%;
   display: flex;
@@ -197,63 +197,65 @@ a:hover {
   z-index: 1;
   transition: all 0.2s;
 }
-.arrowRight:hover, .arrowLeft:hover{
+.arrowRight:hover,
+.arrowLeft:hover {
   background-color: rgba(196, 196, 196, 0.1);
 }
-.slideImg{
+.slideImg {
   /* width: 100%; */
   border-radius: 24px;
 }
-.firstSlide, .slide{
-/* max-width: 1225px; */
-position: relative;
-transition: all 0.6s;
+.firstSlide,
+.slide {
+  /* max-width: 1225px; */
+  position: relative;
+  transition: all 0.6s;
 }
-.slide_information{
+.slide_information {
   width: 86%;
-display: grid;
-position: absolute;
-top: 36%;
-left: 6%;
-gap: 16px;
+  display: grid;
+  position: absolute;
+  top: 36%;
+  left: 8%;
+  gap: 16px;
 }
-.slide_priceBlock{
-display: flex;
-gap: 50px;
-}
-
-.slidePriceWithDiscount{
-font-size: 22px;
-}
-.slideDiscount{
-font-size: 22px;
-color: #77be1d;
-}
-.slidePriceWithoutDiscount{
-font-size: 22px;
-color: rgba(255, 255, 255, 0.3); 
-text-decoration: line-through;
-}
-.slideBtnsBlock{
-display: flex;
-gap: 20px;
-}
-.slideBtn{
-border: none;
-background-color: rgba(255, 255, 255, 0.05);
-padding-inline: 28px;
-padding-block: 24px;
-border-radius: 12px;
-font-size: 16px;
-cursor: pointer;
-transition: all 0.2s;
-}
-.slideBtn:hover{
-background-color: white;
-color: black;
+.slide_priceBlock {
+  display: flex;
+  gap: 50px;
 }
 
-.counterClides{
+.slidePriceWithDiscount {
+  font-size: 22px;
+}
+.slideDiscount {
+  font-size: 22px;
+  color: #77be1d;
+}
+.slidePriceWithoutDiscount {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: line-through;
+}
+.slideBtnsBlock {
+  display: flex;
+  gap: 20px;
+}
+.slideBtn {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding-inline: 28px;
+  padding-block: 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.slideBtn:hover {
+  background-color: white;
+  color: black;
+}
+
+.counterClides {
   width: 300px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -263,14 +265,13 @@ color: black;
   gap: 10px;
   z-index: 1;
 }
-.counter{
+.counter {
   height: 3px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1px;
   transition: all 0.4s;
 }
 /* Slider styles */
-
 
 /* Main styles */
 main {
@@ -387,10 +388,9 @@ main {
 
 /* Main styles */
 
-
 /*Media requests*/
 @media (max-width: 1500px) {
-  .arrowLeft{
+  .arrowLeft {
     position: absolute;
     left: 2%;
     display: flex;
@@ -405,7 +405,7 @@ main {
     z-index: 1;
     transition: all 0.2s;
   }
-  .arrowRight{
+  .arrowRight {
     position: absolute;
     right: 2%;
     display: flex;

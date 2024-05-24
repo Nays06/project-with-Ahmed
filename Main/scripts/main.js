@@ -73,20 +73,22 @@ function createProductCards() {
                                             <span>${productCards[i].categories[1]}</span>
                                         </div>
                                     </div>`;
-    document.querySelector(".smallProductCardsConteiner").appendChild(productCard);
+    document
+      .querySelector(".smallProductCardsConteiner")
+      .appendChild(productCard);
 
-    if(productCards[i].top){
-        const topBlock = document.getElementById(`topBlock${i}`);
-        topBlock.style.display = "flex";
+    if (productCards[i].top) {
+      const topBlock = document.getElementById(`topBlock${i}`);
+      topBlock.style.display = "flex";
     }
   }
 }
 
 createProductCards();
 
-const allProductCards= document.querySelectorAll(".productCard");
+const allProductCards = document.querySelectorAll(".productCard");
 allProductCards.forEach((productCard) => {
-    productCard.addEventListener("mouseenter", (event) => {
+  productCard.addEventListener("mouseenter", (event) => {
     const addCardBtn = productCard.childNodes[4];
     const addFavouritesBtn = productCard.childNodes[6];
     addCardBtn.style.display = "flex";
@@ -110,26 +112,25 @@ allProductCards.forEach((productCard) => {
   });
 });
 
-
 // Change language and currency script//
 const arrowImg = document.querySelector(".arrowImg");
 const langAndCurrenChange = document.querySelector(".langAndCurrenChange");
 
 arrowImg.addEventListener("click", () => {
-    if(langAndCurrenChange.style.display == "none"){
-        langAndCurrenChange.style.display = "block";
-        setTimeout(() => {
-            langAndCurrenChange.style.opacity ="1";
-        }, 100);
-        arrowImg.style.rotate ="180deg";
-    }else{
-        langAndCurrenChange.style.opacity ="0";
-        setTimeout(() => {
-            langAndCurrenChange.style.display = "none";
-        }, 100);
-        arrowImg.style.rotate ="0deg";
-    }
-})
+  if (langAndCurrenChange.style.display == "none") {
+    langAndCurrenChange.style.display = "block";
+    setTimeout(() => {
+      langAndCurrenChange.style.opacity = "1";
+    }, 100);
+    arrowImg.style.rotate = "180deg";
+  } else {
+    langAndCurrenChange.style.opacity = "0";
+    setTimeout(() => {
+      langAndCurrenChange.style.display = "none";
+    }, 100);
+    arrowImg.style.rotate = "0deg";
+  }
+});
 
 // Slider script //
 const arrowLeft = document.querySelector(".arrowLeft");
@@ -140,28 +141,27 @@ const slideBlock = document.querySelector(".slide_block");
 let index = 2;
 let indent = 0;
 arrowLeft.addEventListener("click", () => {
-    if(index > 1){
-        firstSlide.style.marginLeft = `${indent += 160.6}rem`
-        index--;
-        const counter = document.getElementById(`counter${index}`);
-        const previousCounter = document.getElementById(`counter${index + 1}`);
-        counter.style.backgroundColor = "white";
-        counter.style.height = "5px";
-        previousCounter.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-        previousCounter.style.height = "3px";
-      }
-});
-
-arrowRight.addEventListener("click", () => {
-    if(index < 3){
-        firstSlide.style.marginLeft = `${indent -= 160.6}rem`
-        index++;
-        const counter = document.getElementById(`counter${index}`);
-        const previousCounter = document.getElementById(`counter${index - 1}`);
-        counter.style.backgroundColor = "white";
-        counter.style.height = "5px";
-        previousCounter.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-        previousCounter.style.height = "3px";
+  if (index > 1) {
+    firstSlide.style.marginLeft = `${(indent += 160.6)}rem`;
+    index--;
+    const counter = document.getElementById(`counter${index}`);
+    const previousCounter = document.getElementById(`counter${index + 1}`);
+    counter.style.backgroundColor = "white";
+    counter.style.height = "5px";
+    previousCounter.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+    previousCounter.style.height = "3px";
   }
 });
 
+arrowRight.addEventListener("click", () => {
+  if (index < 3) {
+    firstSlide.style.marginLeft = `${(indent -= 160.6)}rem`;
+    index++;
+    const counter = document.getElementById(`counter${index}`);
+    const previousCounter = document.getElementById(`counter${index - 1}`);
+    counter.style.backgroundColor = "white";
+    counter.style.height = "5px";
+    previousCounter.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+    previousCounter.style.height = "3px";
+  }
+});
