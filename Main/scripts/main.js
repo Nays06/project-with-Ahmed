@@ -141,15 +141,27 @@ let index = 2;
 let indent = 0;
 arrowLeft.addEventListener("click", () => {
     if(index > 1){
-        firstSlide.style.marginLeft = `${indent += 160.5}rem`
+        firstSlide.style.marginLeft = `${indent += 160.6}rem`
         index--;
-    }
+        const counter = document.getElementById(`counter${index}`);
+        const previousCounter = document.getElementById(`counter${index + 1}`);
+        counter.style.backgroundColor = "white";
+        counter.style.height = "5px";
+        previousCounter.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+        previousCounter.style.height = "3px";
+      }
 });
 
 arrowRight.addEventListener("click", () => {
     if(index < 3){
-        firstSlide.style.marginLeft = `${indent -= 160.5}rem`
+        firstSlide.style.marginLeft = `${indent -= 160.6}rem`
         index++;
-    }
-})
+        const counter = document.getElementById(`counter${index}`);
+        const previousCounter = document.getElementById(`counter${index - 1}`);
+        counter.style.backgroundColor = "white";
+        counter.style.height = "5px";
+        previousCounter.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+        previousCounter.style.height = "3px";
+  }
+});
 

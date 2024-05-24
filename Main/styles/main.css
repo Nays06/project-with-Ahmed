@@ -145,112 +145,129 @@ a:hover {
 }
 /* Header styles */
 
+/* Slider styles */
+.slider{
+  max-width: 1600px;
+  max-height: 700px;
+  margin-inline: auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s;
+  padding-bottom: 40px;
+}
+.arrowLeft{
+  position: absolute;
+  left: 9.2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(196, 196, 196, 0.05);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 1;
+}
+.arrowRight{
+  position: absolute;
+  right: 9.2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(196, 196, 196, 0.05);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 1;
+}
+.slideImg{
+  /* width: 100%; */
+  border-radius: 24px;
+}
+.firstSlide, .slide{
+/* max-width: 1225px; */
+position: relative;
+transition: all 0.6s;
+}
+.slide_information{
+display: grid;
+position: absolute;
+top: 36%;
+left: 6%;
+gap: 10px;
+}
+.slide_priceBlock{
+display: flex;
+gap: 50px;
+}
+
+.slidePriceWithDiscount{
+font-size: 22px;
+}
+.slideDiscount{
+font-size: 22px;
+color: #77be1d;
+}
+.slidePriceWithoutDiscount{
+font-size: 22px;
+color: rgba(255, 255, 255, 0.3); 
+text-decoration: line-through;
+}
+.slideBtnsBlock{
+display: flex;
+gap: 20px;
+}
+.slideBtn{
+border: none;
+background-color: rgba(255, 255, 255, 0.05);
+padding: 20px;
+border-radius: 12px;
+font-size: 16px;
+cursor: pointer;
+transition: all 0.2s;
+}
+.slideBtn:hover{
+background-color: white;
+color: black;
+}
+
+.counterClides{
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  gap: 10px;
+  z-index: 1;
+}
+.counter{
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1px;
+  transition: all 0.4s;
+}
+/* Slider styles */
+
+
 /* Main styles */
 main {
   max-width: 1400px;
   margin-inline: auto;
-  margin-top: 20px;
+  margin-top: 100px;
 }
 .smallProductCardsConteiner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 66px;
 }
-
-/* Slider styles */
-
-.slider{
-    max-width: 1600px;
-    max-height: 700px;
-    margin-inline: auto;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    gap: 60px;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.6s;
-}
-.arrowLeft{
-    position: absolute;
-    left: 9.2%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: rgba(196, 196, 196, 0.05);
-    backdrop-filter: blur(10px);
-    cursor: pointer;
-    z-index: 1;
-}
-.arrowRight{
-    position: absolute;
-    right: 9.2%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: rgba(196, 196, 196, 0.05);
-    backdrop-filter: blur(10px);
-    cursor: pointer;
-    z-index: 1;
-}
-.slideImg{
-    /* width: 100%; */
-    border-radius: 24px;
-}
-.firstSlide, .slide{
-  /* max-width: 1225px; */
-  position: relative;
-  transition: all 0.6s;
-}
-.slide_information{
-  display: grid;
-  position: absolute;
-  top: 36%;
-  left: 6%;
-  gap: 10px;
-}
-.slide_priceBlock{
-  display: flex;
-  gap: 50px;
-}
-
-.slidePriceWithDiscount{
-  font-size: 22px;
-}
-.slideDiscount{
-  font-size: 22px;
-  color: #77be1d;
-}
-.slidePriceWithoutDiscount{
-  font-size: 22px;
-  color: rgba(255, 255, 255, 0.3); 
-  text-decoration: line-through;
-}
-.slideBtnsBlock{
-  display: flex;
-  gap: 20px;
-}
-.slideBtn{
-  border: none;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.slideBtn:hover{
-  background-color: white;
-  color: black;
-}
-/* Slider styles */
-
 
 /* Product cards styles */
 .productCard {
