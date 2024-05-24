@@ -30,6 +30,7 @@ header h1 {
   justify-content: left;
   align-items: center;
   gap: 4px;
+  cursor: pointer;
 }
 .arrowImg {
   transition: all 0.2s;
@@ -224,19 +225,19 @@ a:hover {
   gap: 50px;
 }
 
-.slidePriceWithDiscount {
+.slide_priceWithDiscount {
   font-size: 22px;
 }
-.slideDiscount {
+.slide_discount {
   font-size: 22px;
   color: #77be1d;
 }
-.slidePriceWithoutDiscount {
+.slide_priceWithoutDiscount {
   font-size: 22px;
   color: rgba(255, 255, 255, 0.3);
   text-decoration: line-through;
 }
-.slideBtnsBlock {
+.slide_btnsBlock {
   display: flex;
   gap: 20px;
 }
@@ -358,10 +359,10 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 6px;
 }
-.discount {
+.product_discount {
   color: #77be1d;
 }
-.priceWithoutDiscount {
+.product_priceWithoutDiscount {
   color: #3d394a;
   text-decoration: line-through;
 }
@@ -385,6 +386,74 @@ main {
   border-radius: 50%;
 }
 /* Product cards styles */
+
+/* Offers cards styles */
+.offersCardsConteiner{
+  margin-top: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 66px;
+  overflow: hidden;
+  padding-top: 60px;
+}
+.offersCard{
+  position: relative;
+  border-radius: 12px;
+  padding: 20px;
+}
+.offersCard h2{
+  width: 300px;
+  font-size: 28px;
+  margin: 0;
+  z-index: 2;
+}
+.offers_priceBlock{
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+}
+.offers_discount{
+  color: #FFE817;
+}
+.offers_priceWithoutDiscount{
+  color: #e4e2e2;
+  text-decoration: line-through;
+}
+.offers_btns{
+  display: flex;
+  gap: 10px;
+  margin-top: 50px;
+}
+.offersBtn{
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding-inline: 20px;
+  padding-block: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.offersBtn:hover{
+  background-color: white;
+  color: black;
+}
+.offersCardImg1{
+  width: 36%;
+  position: absolute;
+  top: -4rem;
+  right: 0;
+}
+.offersCardImg2{
+  width: 54%;
+  position: absolute;
+  top: -7rem;
+  right: -2rem;
+  z-index: 1;
+}
+/* Offers cards styles */
 
 /* Main styles */
 
@@ -427,7 +496,7 @@ main {
     align-items: center;
     opacity: 0;
     position: absolute;
-    top: 60%;
+    top: 57%;
     left: 8%;
     color: white;
     font-weight: 500;
