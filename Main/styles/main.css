@@ -4,6 +4,7 @@
 }
 body {
   background-color: #06030f;
+  padding-inline: 20px;
 }
 /* Header styles */
 header {
