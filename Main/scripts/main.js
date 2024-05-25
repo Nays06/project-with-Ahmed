@@ -9,7 +9,7 @@ const productCards = [
     priceWithDiscount: "3400 Р",
     discount: "-15%",
     priceWithoutDiscount: "4000 Р",
-    productName: "Shape of the world",
+    productName: "Shape of the World",
     categories: ["Буст", "Origin"],
   },
   {
@@ -45,7 +45,7 @@ const productCards = [
     priceWithDiscount: "3400 Р",
     discount: "-15%",
     priceWithoutDiscount: "4000 Р",
-    productName: "Shord Hike",
+    productName: "A Short Hike",
     categories: ["Ключ", "EpicGames"],
   },
   {
@@ -105,7 +105,7 @@ const productCards = [
     priceWithDiscount: "3400 Р",
     discount: "-15%",
     priceWithoutDiscount: "4000 Р",
-    productName: "Shape of the world",
+    productName: "Shape of the World",
     categories: ["Буст", "Origin"],
   },
   {
@@ -129,7 +129,7 @@ const productCards = [
     priceWithDiscount: "3400 Р",
     discount: "-15%",
     priceWithoutDiscount: "4000 Р",
-    productName: "Short Hike",
+    productName: "A Short Hike",
     categories: ["Аккаунт", "Аккаунт Steam"],
   },
   {
@@ -201,7 +201,7 @@ const productCards = [
     priceWithDiscount: "3400 Р",
     discount: "-15%",
     priceWithoutDiscount: "4000 Р",
-    productName: "UNRAVEL",
+    productName: "Minecraft",
     categories: ["Буст", "Origin"],
   },
   {
@@ -503,3 +503,15 @@ function createCommentCards(){
 }
 
 createCommentCards();
+
+// Link to the product page
+
+const productCardsToTheLink = document.querySelectorAll(".productCard");
+productCardsToTheLink.forEach(productCard => {
+  productCard.addEventListener("click", () => {
+    localStorage.setItem("currentProductInGames", productCard.querySelector(".productName").textContent)
+    location.href = "../страница товара/index.html"
+    
+  })
+});
+
