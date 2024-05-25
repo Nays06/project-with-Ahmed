@@ -370,10 +370,10 @@ document.querySelectorAll(".product-gallery-img").forEach((elem) => {
     c++
 })
 
-let ads = []
+let ads = [];
 products.forEach((el) => {
     if(el.title != localStorage.getItem("currentProductInGames")){
-        ads.push(el)
+        ads.push(el);
     }
 })
 
@@ -393,36 +393,41 @@ function createProductCards() {
       const discount = (result * Number(ads[i].skidka)) / 100;
       const priceWithDiscount = result - discount;
       const roundedToHundreds = Math.round(priceWithDiscount / 100) * 100;
-      const productCard = document.createElement("div");
-      productCard.className = "productCard";
-      productCard.id = `productCard${i}`;
-      productCard.innerHTML = `<div class="product-img2"><img src="img/${ads[i].main_img}" style="height: auto; width: 100%; object-fit: contain;" id="productImg${i}"/></div>
-                                      <div id="topBlock${i}" class="topBlock">Top <img src="img/lightning.svg" alt=""> 4</div>
-                                      <button id="addCardBtn${i}" class="addCardBtn">В корзину</button>
-                                      <button id="addFavouritesBtn${i}" class="addFavouritesBtn"><img src="./img/likeImg.svg"></button>
-                                      <div class="productCard_podBlock1">
-                                          <span class="priceWithDiscount">${(roundedToHundreds - 1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} Р</span>
-                                          <span class="discount">-${ads[i].skidka}%</span>
-                                          <span class="priceWithoutDiscount">${ads[i].price} Р</span>
-                                      </div>
-                                      <div class="productCard_podBlock2">
-                                          <span class="productName">${ads[i].title}</span>
-                                      </div>
-                                      <div class="productCard_podBlock3">
-                                          <div class="category">
-                                              <div class="bullet"></div>
-                                              <span>${ads[i].categories[0]}</span>
-                                          </div>
-                                          <div class="category">
-                                              <div class="bullet"></div>
-                                              <span>${ads[i].categories[1]}</span>
-                                          </div>
-                                      </div>`;
-      document.querySelector(".vam-budet-interesno-cont").appendChild(productCard);
+    const productCard = document.createElement("div");
+    productCard.className = "productCard";
+    productCard.id = `productCard${i}`;
+    productCard.innerHTML = `<img src="./img/${ads[i].main_img}" class="productImg" id="productImg${i}"/>
+                                    <div class="cardCategoriesBlock">
+                                      <div class="hitBlock" id="hitBlock${i}">Хит продаж</div>
+                                      <div class="newBlock" id="newBlock${i}">Новинка</div>
+                                      <div class="topBlock" id="topBlock${i}">Top <img src="./images/lightning.svg" alt=""> 4</div>
+                                    </div>
+                                    <button id="addCardBtn${i}" class="addCardBtn">В корзину</button>
+                                    <button id="addFavouritesBtn${i}" class="addFavouritesBtn"><img src="./img/likeImg.svg"></button>
+                                    <div class="productCard_podBlock1">
+                                        <span class="product_priceWithDiscount">${(roundedToHundreds - 1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} Р</span>
+                                        <span class="product_discount">-${ads[i].skidka}%</span>
+                                        <span class="product_priceWithoutDiscount">${ads[i].price} Р</span>
+                                    </div>
+                                    <div class="productCard_podBlock2">
+                                        <span class="productName">${ads[i].title}</span>
+                                    </div>
+                                    <div class="productCard_podBlock3">
+                                        <div class="category">
+                                            <div class="bullet"></div>
+                                            <span>${ads[i].categories[0]}</span>
+                                        </div>
+                                        <div class="category">
+                                            <div class="bullet"></div>
+                                            <span>${ads[i].categories[1]}</span>
+                                        </div>
+                                    </div>`;
+    document.querySelector(".vam-budet-interesno-cont").appendChild(productCard);
     }
 }
 
 createProductCards();
+
 
 const allProductCards= document.querySelectorAll(".productCard");
 allProductCards.forEach((productCard) => {
@@ -460,3 +465,92 @@ document.querySelectorAll(".productCard").forEach((el) => {
         location.href = "index.html"
     })    
 })
+
+document.querySelector(".product-buy").addEventListener("click", () => {
+    let cloned = document.querySelector(".product-img img").cloneNode(true); // Исправлено: добавленно true для копирования всех дочерних элементов
+    cloned.style.position = "absolute";
+    cloned.style.width = "30px";
+    cloned.style.opacity = 0;
+    // Получаем координаты, где элемент должен оказаться в конце анимации
+    const targetX = document.querySelector(".saveBlock").getBoundingClientRect().left - document.querySelector(".product-img").getBoundingClientRect().left + window.scrollX - 60;
+    const targetY = document.querySelector(".saveBlock").getBoundingClientRect().top - document.querySelector(".product-img").getBoundingClientRect().top + window.scrollY - 210;
+      // Создаем стиль для анимации с текущими координатами
+  const keyframes = `
+  @keyframes moveDownRightAndFlyToSaveBlock {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      transform: translate(50px, 250px); /* Подъем вправо и вниз */
+      opacity: 1;
+    }
+    100% {
+      transform: translate(${targetX}px, ${targetY}px);
+      opacity: 1; /* Если вы хотите сохранить изображение видимым */
+    }
+  }
+`;
+// Создаем и вставляем стилевой элемент со сгенерированными ключевыми кадрами
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = keyframes;
+document.head.appendChild(styleSheet);
+// Добавляем клонированный элемент в DOM дерево
+document.querySelector(".product-img").appendChild(cloned);
+// Планируем анимацию для следующего кадра после рефлоу/репейнта
+requestAnimationFrame(() => {
+  cloned.style.animation = 'moveDownRightAndFlyToSaveBlock 2s forwards';
+});
+// Обрабатываем завершение анимации
+cloned.addEventListener('animationend', function() {
+  // Перемещаем клонированный элемент в .saveBlock и очищаем стили
+  const saveBlock = document.querySelector(".saveBlock");
+  cloned.remove();
+  cloned.style.position = '';
+  cloned.style.top = '';
+  cloned.style.left = '';
+  cloned.style.animation = '';
+  cloned.style.opacity = '';
+  // Удаляем временные стили анимации
+  document.head.removeChild(styleSheet);
+});
+});
+
+// Change language and currency script//
+const arrowImg = document.querySelectorAll(".arrowImg");
+const langAndCurrenChange = document.querySelector(".langAndCurrenChange");
+const langAndCurrenChange2 = document.querySelector(".langAndCurrenChange2");
+const langAndCurren = document.querySelectorAll(".langAndCurren");
+
+langAndCurren[0].addEventListener("click", () => {
+  if (langAndCurrenChange.style.display == "none") {
+    langAndCurrenChange.style.display = "block";
+    setTimeout(() => {
+      langAndCurrenChange.style.opacity = "1";
+    }, 100);
+    arrowImg[0].style.rotate = "180deg";
+  } else {
+    langAndCurrenChange.style.opacity = "0";
+    setTimeout(() => {
+      langAndCurrenChange.style.display = "none";
+    }, 100);
+    arrowImg[0].style.rotate = "0deg";
+  }
+});
+
+langAndCurren[1].addEventListener("click", () => {
+  if (langAndCurrenChange2.style.display == "none") {
+    langAndCurrenChange2.style.display = "block";
+    setTimeout(() => {
+      langAndCurrenChange2.style.opacity = "1";
+    }, 100);
+    arrowImg[1].style.rotate = "0deg";
+  } else {
+    langAndCurrenChange2.style.opacity = "0";
+    setTimeout(() => {
+      langAndCurrenChange2.style.display = "none";
+    }, 100);
+    arrowImg[1].style.rotate = "180deg";
+  }
+});

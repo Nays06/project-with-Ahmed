@@ -294,6 +294,7 @@ main {
 .productImg {
   width: 100%;
   height: 79%;
+  border-radius: 12px;
 }
 
 .cardCategoriesBlock{
