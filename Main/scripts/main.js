@@ -348,13 +348,13 @@ langAndCurren[1].addEventListener("click", () => {
     setTimeout(() => {
       langAndCurrenChange2.style.opacity = "1";
     }, 100);
-    arrowImg[1].style.rotate = "180deg";
+    arrowImg[1].style.rotate = "0deg";
   } else {
     langAndCurrenChange2.style.opacity = "0";
     setTimeout(() => {
       langAndCurrenChange2.style.display = "none";
     }, 100);
-    arrowImg[1].style.rotate = "0deg";
+    arrowImg[1].style.rotate = "180deg";
   }
 });
 
