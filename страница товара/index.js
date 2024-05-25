@@ -1,3 +1,5 @@
+document.title = `Playnchill | ${localStorage.getItem("currentProductInGames")}`
+
 function toMain(){
     window.location = "../Main/main.html"
 }
@@ -148,7 +150,7 @@ let products = [
     }
 ]
 
-// localStorage.setItem("currentProductInGames", "Minecraft")
+// localStorage.setItem("currentProductInGames", "Minecraft")\
 
 let currentProduct = products.filter(elem => elem.title === localStorage.getItem("currentProductInGames"))
 
