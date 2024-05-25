@@ -192,6 +192,54 @@ const productCards = [
     productName: "Minecraft",
     categories: ["Ключ", "EpicGames"],
   },
+  {
+    id: 16,
+    top: false,
+    new: false,
+    hit: false,
+    imgSrc: "./images/productImg13.png",
+    priceWithDiscount: "3400 Р",
+    discount: "-15%",
+    priceWithoutDiscount: "4000 Р",
+    productName: "UNRAVEL",
+    categories: ["Буст", "Origin"],
+  },
+  {
+    id: 17,
+    top: false,
+    new: false,
+    hit: false,
+    imgSrc: "./images/productImg14.png",
+    priceWithDiscount: "3400 Р",
+    discount: "-15%",
+    priceWithoutDiscount: "4000 Р",
+    productName: "Seasons after Fall",
+    categories: ["Ключ", "Аккаунт Steam"],
+  },
+  {
+    id: 18,
+    top: false,
+    new: false,
+    hit: false,
+    imgSrc: "./images/productImg15.png",
+    priceWithDiscount: "3400 Р",
+    discount: "-15%",
+    priceWithoutDiscount: "4000 Р",
+    productName: "Yonder: The Cloud Catcher Chronicle",
+    categories: ["Аккаунт", "Аккаунт Steam"],
+  },
+  {
+    id: 19,
+    top: false,
+    new: false,
+    hit: false,
+    imgSrc: "./images/productImg16.png",
+    priceWithDiscount: "3400 Р",
+    discount: "-15%",
+    priceWithoutDiscount: "4000 Р",
+    productName: "Minecraft",
+    categories: ["Ключ", "EpicGames"],
+  },
 ];
 
 function createProductCards() {
@@ -226,8 +274,8 @@ function createProductCards() {
                                         </div>
                                     </div>`;
     if(i < 4) document.querySelector(".smallProductCardsConteiner1").appendChild(productCard);
-    else document.querySelector(".smallProductCardsConteiner2").appendChild(productCard);
-
+    else if(i >= 4 && i < 16) document.querySelector(".smallProductCardsConteiner2").appendChild(productCard);
+    else document.querySelector(".bigProductCardsConteiner").appendChild(productCard);
     if (productCards[i].hit) {
       const hitBlock = document.getElementById(`hitBlock${i}`);
       hitBlock.style.display = "flex";
@@ -273,23 +321,40 @@ allProductCards.forEach((productCard) => {
 });
 
 // Change language and currency script//
-const arrowImg = document.querySelector(".arrowImg");
+const arrowImg = document.querySelectorAll(".arrowImg");
 const langAndCurrenChange = document.querySelector(".langAndCurrenChange");
-const langAndCurren = document.querySelector(".langAndCurren");
+const langAndCurrenChange2 = document.querySelector(".langAndCurrenChange2");
+const langAndCurren = document.querySelectorAll(".langAndCurren");
 
-langAndCurren.addEventListener("click", () => {
+langAndCurren[0].addEventListener("click", () => {
   if (langAndCurrenChange.style.display == "none") {
     langAndCurrenChange.style.display = "block";
     setTimeout(() => {
       langAndCurrenChange.style.opacity = "1";
     }, 100);
-    arrowImg.style.rotate = "180deg";
+    arrowImg[0].style.rotate = "180deg";
   } else {
     langAndCurrenChange.style.opacity = "0";
     setTimeout(() => {
       langAndCurrenChange.style.display = "none";
     }, 100);
-    arrowImg.style.rotate = "0deg";
+    arrowImg[0].style.rotate = "0deg";
+  }
+});
+
+langAndCurren[1].addEventListener("click", () => {
+  if (langAndCurrenChange2.style.display == "none") {
+    langAndCurrenChange2.style.display = "block";
+    setTimeout(() => {
+      langAndCurrenChange2.style.opacity = "1";
+    }, 100);
+    arrowImg[1].style.rotate = "180deg";
+  } else {
+    langAndCurrenChange2.style.opacity = "0";
+    setTimeout(() => {
+      langAndCurrenChange2.style.display = "none";
+    }, 100);
+    arrowImg[1].style.rotate = "0deg";
   }
 });
 
@@ -326,3 +391,115 @@ arrowRight.addEventListener("click", () => {
     previousCounter.style.height = "3px";
   }
 });
+
+
+//CategoriesBtns
+const categoryBtns = document.querySelectorAll(".categoryBtn");
+categoryBtns.forEach(category => {
+  category.addEventListener("click", () => {
+    for(let i = 0; i < categoryBtns.length; i++){
+      if(categoryBtns[i].style.borderBottom = "solid 1px white"){
+        categoryBtns[i].style.borderBottom = "none"
+      }
+      category.style.borderBottom = "solid 1px white";
+    }
+  });
+})
+
+//Create Blog cards
+const blogCards = [
+  {
+    id: 0,
+    imgSrc: "./images/blogCardImg.png",
+    newsName: "Да как так-то борются с пиратством?",
+    news: "Скримеры - только верхушка айсберга ужаса",
+    datePublication: "14 Октября 2023"
+  },
+  {
+    id: 0,
+    imgSrc: "./images/blogCardImg.png",
+    newsName: "Да как так-то борются с пиратством?",
+    news: "Скримеры - только верхушка айсберга ужаса",
+    datePublication: "14 Октября 2023"
+  },
+  {
+    id: 0,
+    imgSrc: "./images/blogCardImg.png",
+    newsName: "Да как так-то борются с пиратством?",
+    news: "Скримеры - только верхушка айсберга ужаса",
+    datePublication: "14 Октября 2023"
+  },
+];
+
+function createBlogCards(){
+  for(let i = 0; i < blogCards.length; i++){
+    const blogCard = document.createElement("div");
+    blogCard.className = "blogCard";
+    blogCard.id = `blogCard${i}`;
+    blogCard.innerHTML = `<img class="blogCardImg" src="${blogCards[i].imgSrc}">
+                          <h3 class="newsName">${blogCards[i].newsName}<h3>
+                          <span class="news">${blogCards[i].news}<span>
+                          <p class="date">${blogCards[i].datePublication}<p>`;
+    document.querySelector(".theBlogConteiner").appendChild(blogCard);
+  }
+}
+
+createBlogCards();
+
+// Create comment cards
+const commentCards = [
+  {
+    id: 0,
+    estimation: 5,
+    commentName: "Cheap keys exists",
+    comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!",
+    datePublication: "7 days ago",
+    userName: "Amart",
+  },
+  {
+    id: 1,
+    estimation: 4,
+    commentName: "Cheap keys exists",
+    comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!",
+    datePublication: "7 days ago",
+    userName: "Amart",
+  },
+  {
+    id: 2,
+    estimation: 3,
+    commentName: "Cheap keys exists",
+    comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!",
+    datePublication: "7 days ago",
+    userName: "Amart",
+  },
+  {
+    id: 3,
+    estimation: 2,
+    commentName: "Cheap keys exists",
+    comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!",
+    datePublication: "7 days ago",
+    userName: "Amart",
+  },
+];
+
+function createCommentCards(){
+  for(let i = 0; i < commentCards.length; i++){
+    const commentCard = document.createElement("div");
+    commentCard.className = "commentCard";
+    commentCard.id = `commentCard${i}`;
+    commentCard.innerHTML =`<div class="estimationBlock" id="estimationBlock${i}"></div>
+                            <span class="datePublication">${commentCards[i].datePublication}</span>
+                            <p class="commentName">${commentCards[i].commentName}</p>
+                            <p class="comment">${commentCards[i].comment}</p>
+                            <p class="userName">${commentCards[i].userName}</p>`;
+    document.querySelector(".commentCardsConteiner").appendChild(commentCard);
+    for(let a = 0; a < commentCards[i].estimation; a++){
+      const starBlock = document.createElement("div");
+      starBlock.className = "starBlock";
+      starBlock.innerHTML = `<img src="./images/star.svg">`;
+      document.getElementById(`estimationBlock${i}`).appendChild(starBlock);
+    }
+  }
+}
+
+createCommentCards();

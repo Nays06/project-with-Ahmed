@@ -21,10 +21,11 @@
   </head>
   <body>
     <header>
+     <div class="headerBlock">
       <div class="headBlock1">
         <div class="langAndCurren">
           <span class="lang">RU /</span>
-          <span class="currency">$</span>
+          <span class="currency">₽</span>
           <img src="./images/arrowImg.svg" class="arrowImg" />
         </div>
 
@@ -37,11 +38,9 @@
           </div>
           <div class="separator"></div>
           <div class="changeCurrency">
-            <button class="changeBtn" style="background-color: #77be1d">
-              $
-            </button>
+            <button class="changeBtn">$</button>
             <button class="changeBtn">€</button>
-            <button class="changeBtn">₽</button>
+            <button class="changeBtn" style="background-color: #77be1d">₽</button>
           </div>
         </div>
 
@@ -73,8 +72,8 @@
           <img src="./images/basketImg.svg" alt="" />
         </div>
       </div>
+     </div>
     </header>
-    <div class="header_borderBottom"></div>
     <div class="slider">
       <div class="arrowLeft">
         <img src="./images/arrowLeftImg.svg" alt="" />
@@ -120,7 +119,7 @@
       </div>
     </div>
     <main>
-      <div class="parentCardsConteiner">
+      <div class="mainBlock1">
         <h1>Top <img src="./images/lightning.svg" style="width: 1.2%" /> 4</h1>
         <div class="smallProductCardsConteiner1"></div>
       </div>
@@ -153,11 +152,103 @@
         </div>
       </div>
 
-      <div class="parentCardsConteiner">
-        <div class="productCategoriesBlock"></div>
-        <div class="smallProductCardsConteiner2" style="margin-top: 100px;"></div>
+      <div class="mainBlock2">
+        <div class="productCategoriesBlock">
+          <h2 class="categoryBtn" style="border-bottom: solid 1px white;">Новинки</h2>
+          <h2 class="categoryBtn">Аккаунты</h2>
+          <h2 class="categoryBtn">Ключи</h2>
+          <h2 class="categoryBtn">Активации</h2>
+          <h2 class="categoryBtn">Прокачка</h2>
+        </div>
+        <div class="smallProductCardsConteiner2" style="margin-block: 50px;"></div>
+        <button class="catalogBtn">Перейти в каталог</button>
+      </div>
+
+      <div class="mainBlock3">
+        <h2>Акции и скидки <span style="color: #77BE1D;">%</span></h2>
+        <div class="bigProductCardsConteiner"></div>
+      </div>
+
+      <div class="mainBlock4">
+        <img src="./images/mainBlock4Img.png" alt="">
+        <h2>Свежее в блоге</h2>
+        <div class="theBlogConteiner"></div>
+        <button class="publicationsBtn">Все публикации</button>
+      </div>
+
+      <div class="mainBlock5">
+        <h2>Отзывы</h2>
+        <div class="commentCardsConteiner"></div>
       </div>
     </main>
+
+    <footer>
+      <div class="footerParentBlock">
+        <div class="footerBlock1">
+          <img src="./images/payPalImg.svg" alt="">
+          <img src="./images/masterCardImg.svg" alt="">
+          <img src="./images/visaImg.svg" alt="">
+          <img src="./images/mirImg.svg" alt="">
+          <img src="./images/webMoneyImg.svg" alt="">
+          <img src="./images/payPalImg.svg" alt="">
+          <img src="./images/payPalImg.svg" alt="">
+        </div>
+        <div class="footerBlock2">
+          <div class="footerBlock2_podBlock">
+            <h5>Окомпании</h5>
+            <p>О нас</p>
+            <p>Вакансии</p>
+            <p>Реквизиты</p>
+          </div>
+          <div class="footerBlock2_podBlock">
+            <h5>Договор оферты</h5>
+            <p>Каталог</p>
+            <p>Акции</p>
+            <p>Личный кабинет</p>
+          </div>
+          <div class="footerBlock2_podBlock">
+            <h5>Договор оферты</h5>
+            <p>Каталог</p>
+            <p>Акции</p>
+            <p>Личный кабинет</p>
+          </div>
+          <div class="footerBlock2_podBlock2">
+            <img src="./images/footerImg1.svg" alt="">
+            <img src="./images/footerImg2.svg" alt="">
+          </div>
+        </div>  
+      </div>
+    </footer>
+    <div class="socialNetworkBlock">
+      <a href="">Правовая информация</a>
+      <p>Интернет-магазин игр «Playnchill» © 2022 </p>
+      <div class="langAndCurren">
+        <span class="lang">RU /</span>
+        <span class="currency">₽</span>
+        <img src="./images/arrowImg.svg" class="arrowImg" />
+      </div>
+
+      <div class="langAndCurrenChange2" style="display: none">
+        <div class="changeLanguage">
+          <button class="changeBtn" style="background-color: #77be1d">
+            Russian (RU)
+          </button>
+          <button class="changeBtn">English (EN)</button>
+        </div>
+        <div class="separator"></div>
+        <div class="changeCurrency">
+          <button class="changeBtn">$</button>
+          <button class="changeBtn">€</button>
+          <button class="changeBtn" style="background-color: #77be1d">₽</button>
+        </div>
+      </div>
+      <div class="socialNetwork_icons">
+        <img src="./images/vkIcon.svg" alt="">
+        <img src="./images/discordIcon.svg" alt="">
+        <img src="./images/twitterIcon.svg" alt="">
+        <img src="./images/instagramIcon.svg" alt="">
+      </div>
+    </div>
     <script src="./scripts/main.js"></script>
   </body>
 </html>

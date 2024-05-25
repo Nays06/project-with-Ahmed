@@ -8,12 +8,15 @@ body {
 }
 /* Header styles */
 header {
-  position: relative;
+  width: 100%;
+  border-bottom: solid 1px rgb(56, 56, 56);
+}
+.headerBlock{
   max-width: 1400px;
   margin-inline: auto;
   margin-top: 20px;
+  position: relative;
 }
-
 header img,
 header h1 {
   cursor: pointer;
@@ -144,12 +147,6 @@ a:hover {
   justify-content: right;
   align-items: center;
   gap: 10px;
-}
-.header_borderBottom {
-  height: 1px;
-  width: 100%;
-  margin-top: 20px;
-  background-color: rgb(56, 56, 56);
 }
 /* Header styles */
 
@@ -282,7 +279,7 @@ main {
 .smallProductCardsConteiner1, .smallProductCardsConteiner2 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 66px;
+  gap: 36px;
 }
 
 /* Product cards styles */
@@ -361,7 +358,7 @@ main {
   background-color: #649e18;
 }
 .addFavouritesBtn {
-  width: 12%;
+  /* width: 12%; */
   height: auto;
   display: none;
   opacity: 0;
@@ -377,9 +374,6 @@ main {
 }
 .addFavouritesBtn:hover {
   background-color: rgb(235, 234, 234);
-}
-.addFavouritesBtn img {
-  width: 100%;
 }
 .productCard_podBlock1 {
   display: grid;
@@ -482,8 +476,195 @@ main {
 }
 /* Offers cards styles */
 
+/* Main Block 2 styles */
+.productCategoriesBlock{
+  display: flex;
+  margin-top: 60px;
+}
+.productCategoriesBlock h2{
+  padding-inline: 14px;
+  padding-block: 10px;
+  cursor: pointer;
+}
+.catalogBtn{
+  border: solid 1px gray;
+  background: none;
+  width: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  color: #366EDC;
+  font-size: 16px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.catalogBtn:hover{
+  background-color: #366EDC;
+  color: white;
+}
+/* Main Block 2 styles */
+/* Main Block 3 */
+.bigProductCardsConteiner{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+/* Main Block 3 */
+
+/* Main Block 4 */
+.mainBlock4{
+  margin-top: 80px;
+}
+.mainBlock4 img {
+  width: 100%;
+}
+.mainBlock4 h2{
+  margin-top: 70px;
+}
+.theBlogConteiner{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 30px;
+}
+.blogCardImg{
+  width: 100%;
+}
+.newsName{
+  font-size: 22px;
+}
+.news{
+  font-size: 16px;
+}
+.date{
+  color: #63656A;
+  font-size: 15px;
+}
+.publicationsBtn{
+  border: solid 1px gray;
+  background: none;
+  width: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 50px;
+  color: #366EDC;
+  font-size: 16px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.publicationsBtn:hover{
+  background-color: #366EDC;
+  color: white;
+}
+/* Main Block 4 */
+
+/* Main Block 5 */
+.mainBlock5{
+  margin-top: 60px;
+}
+.commentCardsConteiner{
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+}
+.commentCard{
+  position: relative;
+  width: 314px;
+}
+.estimationBlock{
+  display: flex;
+  gap: 4px;
+}
+.starBlock{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background-color: #00B67A;
+}
+.datePublication{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #3d394a;
+}
+.userName{
+  color: #3d394a;
+}
+/* Main Block 5 */
 /* Main styles */
 
+/* Footer styles*/
+footer{
+  border-block: solid 1px rgb(56, 56, 56);
+  padding-block: 80px;
+  margin-top: 80px;
+  margin-bottom: 26px;
+}
+.footerParentBlock{
+  max-width: 1400px;
+  margin-inline: auto;
+}
+.footerBlock1{
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerBlock2{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.footerBlock2_podBlock p{
+  color: #CDCDCF;
+}
+.footerBlock2_podBlock2{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.socialNetworkBlock{
+  position: relative;
+  max-width: 1400px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.2fr 0.2fr;
+  align-items: center;
+}
+.socialNetworkBlock a{
+  display: flex;
+  justify-content: left;
+  color: #366EDC;
+}
+.socialNetworkBlock p{
+  display: flex;
+  justify-content: center;
+  color: #63686D;
+}
+.socialNetworkBlock img{cursor: pointer;}
+.ialNetworkBlock .langAndCurren{
+  display: flex;
+  justify-content: center;
+}
+.langAndCurrenChange2 {
+  position: absolute;
+  bottom: 40px;
+  left: 100%;
+  width: 140px;
+  background-color: #0c061f;
+  border-radius: 8px;
+  padding: 6px;
+  gap: 4px;
+  opacity: 0;
+  transition: all 0.2s;
+  z-index: 1;
+}
+.socialNetwork_icons{
+  display: flex;
+  justify-content: space-between;
+}
+/* Footer styles*/
 /*Media requests*/
 @media (max-width: 1500px) {
   .arrowLeft {
