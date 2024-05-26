@@ -1,3 +1,8 @@
+const userName = document.getElementById("userName");
+const sessionUserName = sessionStorage.getItem("username");
+userName.innerHTML = sessionUserName;
+
+
 document.title = `Playnchill | ${localStorage.getItem("currentProductInGames")}`
 
 function toMain(){
