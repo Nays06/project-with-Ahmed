@@ -1,3 +1,7 @@
+// UserName
+const userName = document.getElementById("userName");
+const sessionUserName = sessionStorage.getItem("username");
+userName.innerHTML = sessionUserName;
 // create product cards script//
 const productCards = [
   {
