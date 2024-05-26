@@ -506,7 +506,7 @@ function createCommentCards(){
   }
 }
 
-createCommentCards();
+// createCommentCards();
 
 // Link to the product page
 
@@ -517,5 +517,60 @@ productCardsToTheLink.forEach(productCard => {
     location.href = "../страница товара/index.html"
     
   })
+});
+
+// Add feedback
+const addFeedbackBtn = document.getElementById("addFeedbackBtn");
+const feedbackForm = document.getElementById("feedbackForm");
+addFeedbackBtn.addEventListener("click", () => {
+  feedbackForm.style.display = "flex";
+  setTimeout(() => {
+    feedbackForm.style.opacity = "1";
+  }, 200)
+})
+
+const cross = document.getElementById("cross");
+cross.addEventListener("click", () => {
+  feedbackForm.style.opacity = "0";
+  setTimeout(() => {
+    feedbackForm.style.display = "none";
+  }, 200)
+})
+
+const feedbackUserName = document.getElementById("feedbackUserName");
+feedbackUserName.innerHTML = sessionUserName;
+
+const estimationInp = document.getElementById("estimationInp");
+const feedbackInp = document.getElementById("feedbackInp");
+const publishBtn = document.getElementById("publishBtn");
+
+estimationInp.addEventListener("input", () => {
+  estimationInp.value = estimationInp.value.replace(/[^0-5]/, "");
+});
+
+let feedbackId = 1
+publishBtn.addEventListener("click", () => {
+  let currentDate = new Date();
+  let currentDay = currentDate.getDate();
+  let currentMonth = currentDate.getMonth() + 1; // Месяцы в JavaScript начинаются с 0, поэтому добавляем 1
+  let currentYear = currentDate.getFullYear();
+
+  const feedbackCard = document.createElement("div");
+  feedbackCard.className = "feedbackCard";
+  feedbackCard.id = `feedbackCard${feedbackId}`;
+  feedbackCard.innerHTML =`<div class="estimationBlock" id="estimationBlock${feedbackId}"></div>
+                          <span class="datePublication">${currentDay}.${currentMonth}.${currentYear}</span>
+                          <p class="feedback">${feedbackInp.value}</p>
+                          <p class="userName">${sessionUserName}</p>`;
+  document.querySelector(".feedbackCardsConteiner").appendChild(feedbackCard);
+  for(let a = 0; a < estimationInp.value; a++){
+    const estimationBlock = document.getElementById(`estimationBlock${feedbackId}`);
+    estimationBlock.innerHTML += `<div class="starBlock"><img src="./images/star.svg"></div>`
+  }
+  feedbackId++;
+  feedbackForm.style.opacity = "0";
+  setTimeout(() => {
+    feedbackForm.style.display = "none";
+  }, 200)
 });
 

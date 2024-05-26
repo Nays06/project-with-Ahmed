@@ -177,10 +177,37 @@
       </div>
 
       <div class="mainBlock5">
-        <h2>Отзывы</h2>
-        <div class="commentCardsConteiner"></div>
+        <h2>Отзывы</h2> 
+        <button id="addFeedbackBtn">Оставить отзыв</button>
+        <div class="feedbackCardsConteiner">
+          <div class="feedbackCard">
+            <div class="estimationBlock" id="estimationBlock0">
+              <div class="starBlock"><img src="./images/star.svg"></div>
+              <div class="starBlock"><img src="./images/star.svg"></div>
+              <div class="starBlock"><img src="./images/star.svg"></div>
+              <div class="starBlock"><img src="./images/star.svg"></div>
+              <div class="starBlock"><img src="./images/star.svg"></div>
+            </div>
+              <span class="datePublication">20.04.2024</span>
+              <p class="feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!</p>
+              <p class="userName">Amart</p>
+          </div>
+        </div>
       </div>
     </main>
+
+    <div class="addFeedBack_background" id="feedbackForm">
+      <div class="addFeedbackFrom">
+        <img src="./images/cross.svg" id="cross">
+        <h3>Заполните форму</h3>
+        <label for="">Оценка:</label>
+        <input id="estimationInp" type="text" maxlength="1">
+        <label for="">Отзыв:</label>
+        <input id="feedbackInp" type="text">
+        <div><span>Ник пользователя: </span><span id="feedbackUserName"></span></div>
+        <button id="publishBtn">Опубликовать</button>
+      </div>
+    </div>
 
     <footer>
       <div class="footerParentBlock">
