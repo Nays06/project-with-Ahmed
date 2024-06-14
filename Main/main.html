@@ -21,7 +21,7 @@
   </head>
   <body>
     <header>
-     <div class="headerBlock">
+     <div class="headBlock_childBlock">
       <div class="headBlock1">
         <div class="langAndCurren">
           <span class="lang">RU /</span>
@@ -38,9 +38,9 @@
           </div>
           <div class="separator"></div>
           <div class="changeCurrency">
-            <button class="changeBtn">$</button>
-            <button class="changeBtn">€</button>
-            <button class="changeBtn" style="background-color: #77be1d">₽</button>
+            <button class="dollarBtn">$</button>
+            <button class="euroBtn">€</button>
+            <button class="rubleBtn" style="background-color: #77be1d">₽</button>
           </div>
         </div>
 
@@ -62,10 +62,15 @@
           <img src="./images/logo.svg" alt="" />
           <h1>Playnchill</h1>
         </div>
-        <div class="searchBlock">
-          <input class="searchInp" type="text" placeholder="Поиск" />
+        <div class="searchInpBlock">
+          <input class="search" id="searchInp" type="text" placeholder="Поиск" />
           <img src="./images/searchImg.svg" alt="" />
         </div>
+
+        <div class="searchBlock_parentBlock">
+          <div class="searchBlock"></div>
+        </div>
+
         <a class="free" href="">Бесплатно</a>
         <div class="saveBlock">
           <img src="./images/favouritesImg.svg" alt="" />
@@ -74,6 +79,7 @@
       </div>
      </div>
     </header>
+
     <div class="slider">
       <div class="arrowLeft">
         <img src="./images/arrowLeftImg.svg" alt="" />
@@ -153,25 +159,20 @@
       </div>
 
       <div class="mainBlock2">
-        <div class="productCategoriesBlock">
-          <h2 class="categoryBtn" style="border-bottom: solid 1px white;">Новинки</h2>
-          <h2 class="categoryBtn">Аккаунты</h2>
-          <h2 class="categoryBtn">Ключи</h2>
-          <h2 class="categoryBtn">Активации</h2>
-          <h2 class="categoryBtn">Прокачка</h2>
+        <div class="productCatalog">
+          <h2 class="сatalog" style="font-size: 36px;">Каталог игр</h2>
         </div>
-        <div class="smallProductCardsConteiner2" style="margin-block: 50px;"></div>
-        <button class="catalogBtn">Перейти в каталог</button>
+        <div class="smallProductCardsConteiner2" style="margin-bottom: 100px;"></div>
       </div>
 
       <div class="mainBlock3">
-        <h2>Акции и скидки <span style="color: #77BE1D;">%</span></h2>
+        <h2 style="font-size: 36px;">Акции и скидки <span style="color: #77BE1D;">%</span></h2>
         <div class="bigProductCardsConteiner"></div>
       </div>
 
       <div class="mainBlock4">
         <img src="./images/mainBlock4Img.png" alt="">
-        <h2>Свежее в блоге</h2>
+        <h2 style="font-size: 26px;">Свежее в блоге</h2>
         <div class="theBlogConteiner"></div>
         <button class="publicationsBtn">Все публикации</button>
       </div>
@@ -264,9 +265,9 @@
         </div>
         <div class="separator"></div>
         <div class="changeCurrency">
-          <button class="changeBtn">$</button>
-          <button class="changeBtn">€</button>
-          <button class="changeBtn" style="background-color: #77be1d">₽</button>
+          <button class="dollarBtn">$</button>
+          <button class="euroBtn">€</button>
+          <button class="rubleBtn" style="background-color: #77be1d">₽</button>
         </div>
       </div>
       <div class="socialNetwork_icons">

@@ -15,6 +15,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Shape of the World",
     categories: ["Буст", "Origin"],
+    search: false,
   },
   {
     id: 1,
@@ -27,6 +28,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Journey",
     categories: ["Ключ", "Аккаунт Steam"],
+    search: false,
   },
   {
     id: 2,
@@ -39,6 +41,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Minecraft",
     categories: ["Аккаунт", "Аккаунт Steam"],
+    search: false,
   },
   {
     id: 3,
@@ -51,6 +54,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "A Short Hike",
     categories: ["Ключ", "EpicGames"],
+    search: false,
   },
   {
     id: 4,
@@ -63,6 +67,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Flower",
     categories: ["Буст", "Origin"],
+    search: false,
   },
   {
     id: 5,
@@ -75,6 +80,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Hohokum",
     categories: ["Ключ", "Аккаунт Steam"],
+    search: false,
   },
   {
     id: 6,
@@ -87,6 +93,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "THE WITNESS",
     categories: ["Ключ", "Аккаунт Steam"],
+    search: false,
   },
   {
     id: 7,
@@ -99,6 +106,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Eastshade",
     categories: ["Ключ", "EpicGames"],
+    search: false,
   },
   {
     id: 8,
@@ -111,6 +119,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Shape of the World",
     categories: ["Буст", "Origin"],
+    search: true,
   },
   {
     id: 9,
@@ -123,6 +132,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Journey",
     categories: ["Ключ", "Аккаунт Steam"],
+    search: true,
   },
   {
     id: 10,
@@ -135,6 +145,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "A Short Hike",
     categories: ["Аккаунт", "Аккаунт Steam"],
+    search: true,
   },
   {
     id: 11,
@@ -147,6 +158,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Little Big Planet",
     categories: ["Ключ", "EpicGames"],
+    search: false,
   },
   {
     id: 12,
@@ -159,6 +171,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "UNRAVEL",
     categories: ["Буст", "Origin"],
+    search: false,
   },
   {
     id: 13,
@@ -171,6 +184,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Seasons after Fall",
     categories: ["Ключ", "Аккаунт Steam"],
+    search: false,
   },
   {
     id: 14,
@@ -183,6 +197,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Yonder: The Cloud Catcher Chronicle",
     categories: ["Аккаунт", "Аккаунт Steam"],
+    search: false,
   },
   {
     id: 15,
@@ -195,6 +210,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Minecraft",
     categories: ["Ключ", "EpicGames"],
+    search: true,
   },
   {
     id: 16,
@@ -207,6 +223,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Minecraft",
     categories: ["Буст", "Origin"],
+    search: true,
   },
   {
     id: 17,
@@ -219,6 +236,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Seasons after Fall",
     categories: ["Ключ", "Аккаунт Steam"],
+    search: true,
   },
   {
     id: 18,
@@ -231,6 +249,7 @@ const productCards = [
     priceWithoutDiscount: "4000 Р",
     productName: "Yonder: The Cloud Catcher Chronicle",
     categories: ["Аккаунт", "Аккаунт Steam"],
+    search: true,
   },
   {
     id: 19,
@@ -241,8 +260,9 @@ const productCards = [
     priceWithDiscount: "3400 Р",
     discount: "-15%",
     priceWithoutDiscount: "4000 Р",
-    productName: "Minecraft",
+    productName: "UNRAVEL TWO",
     categories: ["Ключ", "EpicGames"],
+    search: true,
   },
 ];
 
@@ -277,9 +297,13 @@ function createProductCards() {
                                             <span>${productCards[i].categories[1]}</span>
                                         </div>
                                     </div>`;
-    if(i < 4) document.querySelector(".smallProductCardsConteiner1").appendChild(productCard);
-    else if(i >= 4 && i < 16) document.querySelector(".smallProductCardsConteiner2").appendChild(productCard);
-    else document.querySelector(".bigProductCardsConteiner").appendChild(productCard);
+    if(i < 4) {document.querySelector(".smallProductCardsConteiner1").appendChild(productCard)}
+    else if(i >= 4 && i < 16) {document.querySelector(".smallProductCardsConteiner2").appendChild(productCard)}
+    else {
+      document.querySelector(".bigProductCardsConteiner").appendChild(productCard);
+      productCard.style.height = "450px";
+    }
+
     if (productCards[i].hit) {
       const hitBlock = document.getElementById(`hitBlock${i}`);
       hitBlock.style.display = "flex";
@@ -298,32 +322,35 @@ function createProductCards() {
 
 createProductCards();
 
-const allProductCards = document.querySelectorAll(".productCard");
-allProductCards.forEach((productCard) => {
-  productCard.addEventListener("mouseenter", (event) => {
-    const addCardBtn = productCard.childNodes[4];
-    const addFavouritesBtn = productCard.childNodes[6];
-    addCardBtn.style.display = "flex";
-    addFavouritesBtn.style.display = "flex";
-    setTimeout(() => {
-      addCardBtn.style.opacity = "1";
-      addFavouritesBtn.style.opacity = "1";
-    }, 100);
+function pointingAtTheCard(){
+  let allProductCards = document.querySelectorAll(".productCard");
+  allProductCards.forEach((productCard) => {
+    productCard.addEventListener("mouseenter", (event) => {
+      const addCardBtn = productCard.childNodes[4];
+      const addFavouritesBtn = productCard.childNodes[6];
+      addCardBtn.style.display = "flex";
+      addFavouritesBtn.style.display = "flex";
+      setTimeout(() => {
+        addCardBtn.style.opacity = "1";
+        addFavouritesBtn.style.opacity = "1";
+      }, 100);
+    });
+  
+    productCard.addEventListener("mouseleave", (event) => {
+      const addCardBtn = productCard.childNodes[4];
+      const addFavouritesBtn = productCard.childNodes[6];
+      addCardBtn.style.opacity = "0";
+      addFavouritesBtn.style.opacity = "0";
+  
+      setTimeout(() => {
+        addCardBtn.style.display = "none";
+        addFavouritesBtn.style.display = "none";
+      }, 100);
+    });
   });
+};
 
-  productCard.addEventListener("mouseleave", (event) => {
-    const addCardBtn = productCard.childNodes[4];
-    const addFavouritesBtn = productCard.childNodes[6];
-    addCardBtn.style.opacity = "0";
-    addFavouritesBtn.style.opacity = "0";
-
-    setTimeout(() => {
-      addCardBtn.style.display = "none";
-      addFavouritesBtn.style.display = "none";
-    }, 100);
-  });
-});
-
+pointingAtTheCard();
 // Change language and currency script//
 const arrowImg = document.querySelectorAll(".arrowImg");
 const langAndCurrenChange = document.querySelector(".langAndCurrenChange");
@@ -362,6 +389,82 @@ langAndCurren[1].addEventListener("click", () => {
   }
 });
 
+const dollarBtns = document.querySelectorAll(".dollarBtn");
+const euroBtns = document.querySelectorAll(".euroBtn");
+const rubleBtns = document.querySelectorAll(".rubleBtn");
+
+dollarBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    for(let i = 0; i < productCards.length; i++){
+      productCards[i].priceWithDiscount = "38 $"
+      productCards[i].priceWithoutDiscount = "45 $"
+    }
+    allProductCards.forEach(card => {
+      card.remove();
+    })
+    dollarBtns[0].style.backgroundColor = "#77be1d";
+    dollarBtns[1].style.backgroundColor = "#77be1d";
+
+    euroBtns[0].style.background = "none";
+    euroBtns[1].style.background = "none";
+
+    rubleBtns[0].style.background = "none";
+    rubleBtns[1].style.background = "none";
+  
+    createProductCards();
+    allProductCards = document.querySelectorAll(".productCard");
+    pointingAtTheCard();
+  });
+})
+
+euroBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    for(let i = 0; i < productCards.length; i++){
+      productCards[i].priceWithDiscount = "35 €"
+      productCards[i].priceWithoutDiscount = "42 €"
+    }
+    allProductCards.forEach(card => {
+      card.remove();
+    })
+    euroBtns[0].style.backgroundColor = "#77be1d";
+    euroBtns[1].style.backgroundColor = "#77be1d";
+
+    dollarBtns[0].style.background = "none";
+    dollarBtns[1].style.background = "none";
+
+    rubleBtns[0].style.background = "none";
+    rubleBtns[1].style.background = "none";
+
+    createProductCards();
+    allProductCards = document.querySelectorAll(".productCard");
+    pointingAtTheCard();
+  });
+})
+
+rubleBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    for(let i = 0; i < productCards.length; i++){
+      productCards[i].priceWithDiscount = "3400 ₽"
+      productCards[i].priceWithoutDiscount = "4000 ₽"
+    }
+    allProductCards.forEach(card => {
+      card.remove();
+    })
+    rubleBtns[0].style.backgroundColor = "#77be1d";
+    rubleBtns[1].style.backgroundColor = "#77be1d";
+
+    euroBtns[0].style.background = "none";
+    euroBtns[1].style.background = "none";
+
+    dollarBtns[0].style.background = "none";
+    dollarBtns[1].style.background = "none";
+  
+    createProductCards();
+    allProductCards = document.querySelectorAll(".productCard");
+    pointingAtTheCard();
+  });
+})
+
 // Slider script //
 const arrowLeft = document.querySelector(".arrowLeft");
 const arrowRight = document.querySelector(".arrowRight");
@@ -396,19 +499,6 @@ arrowRight.addEventListener("click", () => {
   }
 });
 
-
-//CategoriesBtns
-const categoryBtns = document.querySelectorAll(".categoryBtn");
-categoryBtns.forEach(category => {
-  category.addEventListener("click", () => {
-    for(let i = 0; i < categoryBtns.length; i++){
-      if(categoryBtns[i].style.borderBottom = "solid 1px white"){
-        categoryBtns[i].style.borderBottom = "none"
-      }
-      category.style.borderBottom = "solid 1px white";
-    }
-  });
-})
 
 //Create Blog cards
 const blogCards = [
@@ -450,75 +540,18 @@ function createBlogCards(){
 
 createBlogCards();
 
-// Create comment cards
-const commentCards = [
-  {
-    id: 0,
-    estimation: 5,
-    commentName: "Cheap keys exists",
-    comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!",
-    datePublication: "7 days ago",
-    userName: "Amart",
-  },
-  {
-    id: 1,
-    estimation: 4,
-    commentName: "Cheap keys exists",
-    comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!",
-    datePublication: "7 days ago",
-    userName: "Amart",
-  },
-  {
-    id: 2,
-    estimation: 3,
-    commentName: "Cheap keys exists",
-    comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!",
-    datePublication: "7 days ago",
-    userName: "Amart",
-  },
-  {
-    id: 3,
-    estimation: 2,
-    commentName: "Cheap keys exists",
-    comment: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!",
-    datePublication: "7 days ago",
-    userName: "Amart",
-  },
-];
-
-function createCommentCards(){
-  for(let i = 0; i < commentCards.length; i++){
-    const commentCard = document.createElement("div");
-    commentCard.className = "commentCard";
-    commentCard.id = `commentCard${i}`;
-    commentCard.innerHTML =`<div class="estimationBlock" id="estimationBlock${i}"></div>
-                            <span class="datePublication">${commentCards[i].datePublication}</span>
-                            <p class="commentName">${commentCards[i].commentName}</p>
-                            <p class="comment">${commentCards[i].comment}</p>
-                            <p class="userName">${commentCards[i].userName}</p>`;
-    document.querySelector(".commentCardsConteiner").appendChild(commentCard);
-    for(let a = 0; a < commentCards[i].estimation; a++){
-      const starBlock = document.createElement("div");
-      starBlock.className = "starBlock";
-      starBlock.innerHTML = `<img src="./images/star.svg">`;
-      document.getElementById(`estimationBlock${i}`).appendChild(starBlock);
-    }
-  }
-}
-
-// createCommentCards();
-
 // Link to the product page
 
-const productCardsToTheLink = document.querySelectorAll(".productCard");
-productCardsToTheLink.forEach(productCard => {
-  productCard.addEventListener("click", () => {
-    localStorage.setItem("currentProductInGames", productCard.querySelector(".productName").textContent)
-    location.href = "../страница товара/index.html"
-    
-  })
-});
-
+function goToTheProductPage(){
+    const productCardsToTheLink = document.querySelectorAll(".productCard");
+    productCardsToTheLink.forEach(productCard => {
+    productCard.addEventListener("click", () => {
+      localStorage.setItem("currentProductInGames", productCard.querySelector(".productName").textContent)
+      location.href = "../страница товара/index.html";
+    })
+  });
+}
+goToTheProductPage();
 // Add feedback
 const addFeedbackBtn = document.getElementById("addFeedbackBtn");
 const feedbackForm = document.getElementById("feedbackForm");
@@ -552,14 +585,14 @@ let feedbackId = 1
 publishBtn.addEventListener("click", () => {
   let currentDate = new Date();
   let currentDay = currentDate.getDate();
-  let currentMonth = currentDate.getMonth() + 1; // Месяцы в JavaScript начинаются с 0, поэтому добавляем 1
+  let currentMonth = currentDate.getMonth() + 1; 
   let currentYear = currentDate.getFullYear();
 
   const feedbackCard = document.createElement("div");
   feedbackCard.className = "feedbackCard";
   feedbackCard.id = `feedbackCard${feedbackId}`;
   feedbackCard.innerHTML =`<div class="estimationBlock" id="estimationBlock${feedbackId}"></div>
-                          <span class="datePublication">${currentDay}.${currentMonth}.${currentYear}</span>
+                          <span class="datePublication">${currentDay}.0${currentMonth}.${currentYear}</span>
                           <p class="feedback">${feedbackInp.value}</p>
                           <p class="userName">${sessionUserName}</p>`;
   document.querySelector(".feedbackCardsConteiner").appendChild(feedbackCard);
@@ -574,3 +607,74 @@ publishBtn.addEventListener("click", () => {
   }, 200)
 });
 
+// Search
+const searchBlock = document.querySelector(".searchBlock")
+const searchInp = document.getElementById("searchInp");
+let inpLength;
+
+searchInp.addEventListener("input", () => {
+  if(searchInp.value.length < inpLength){
+    searchBlock.style.padding = 0;
+    searchBlock.innerHTML = "";
+    searchBlock.style.display = "grid";
+  }
+})
+
+document.addEventListener("keypress", (event) => {
+  switch (event.key){
+    case "Enter":
+    inpLength = searchInp.value.length;
+
+    if(inpLength != 0){
+      const check = new RegExp(searchInp.value, "i");
+      let nothingCheck  = false;
+      searchBlock.innerHTML = "";
+
+      for(let i = 0; i < productCards.length; i++){
+        if (check.test(productCards[i].productName) && !productCards[i].search){
+          searchBlock.style.padding = "20px"; 
+          const productCard = document.createElement("div");
+          productCard.className = "productCard";
+          productCard.id = `productCard${i}`;
+          productCard.innerHTML = `<img src="${productCards[i].imgSrc}" class="productImg" id="productImg${i}"/>
+                                    <div class="cardCategoriesBlock">
+                                      <div class="hitBlock" id="hitBlock${i}">Хит продаж</div>
+                                      <div class="newBlock" id="newBlock${i}">Новинка</div>
+                                      <div class="topBlock" id="topBlock${i}">Top <img src="./images/lightning.svg" alt=""> 4</div>
+                                    </div>
+                                    <button id="addCardBtn${i}" class="addCardBtn">В корзину</button>
+                                    <button id="addFavouritesBtn${i}" class="addFavouritesBtn"><img src="./images/likeImg.svg"></button>
+                                    <div class="productCard_podBlock1">
+                                        <span class="product_priceWithDiscount">${productCards[i].priceWithDiscount}</span>
+                                        <span class="product_discount">${productCards[i].discount}</span>
+                                        <span class="product_priceWithoutDiscount">${productCards[i].priceWithoutDiscount}</span>
+                                    </div>
+                                    <div class="productCard_podBlock2">
+                                        <span class="productName">${productCards[i].productName}</span>
+                                    </div>
+                                    <div class="productCard_podBlock3">
+                                        <div class="category">
+                                            <div class="bullet"></div>
+                                            <span>${productCards[i].categories[0]}</span>
+                                        </div>
+                                        <div class="category">
+                                            <div class="bullet"></div>
+                                            <span>${productCards[i].categories[1]}</span>
+                                        </div>
+                                    </div>`;
+          searchBlock.appendChild(productCard);
+          nothingCheck = true;
+          pointingAtTheCard();
+          goToTheProductPage();
+        }
+      }
+      if(!nothingCheck){
+        searchBlock.style.padding = "20px"; 
+        searchBlock.style.display = "flex";
+        searchBlock.innerHTML = "<h2>По вашему запросу ничего не найдено</h2>";
+      }
+    }
+
+    break
+  }
+})
