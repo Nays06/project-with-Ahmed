@@ -168,6 +168,17 @@ nav {
   color: #77be1d;
   cursor: pointer;
 }
+.commitChangesBtn{
+  width: 100%;
+  border: none;
+  background-color: #77be1d;
+  border-radius: 12px;
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
 
 .headBlock2 {
   width: 100%;

@@ -88,11 +88,15 @@
           <div class="profileFrom_avatar"><img src="" class="avatarImg"></div>
           <span class="userName"></span>
         </div>
-        <input type="file" class="changeAvatar">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <label>Файл</label><br>
+          <input type="file" name="filedata" /><br><br>
+          <input type="submit" value="Send" />
+        </form>
         <div class="user_info">
           <div>Ваш email:  <span class="email"></span></div> <a class="changeEmail">Изменить почту</a>
         </div>
-        <button>Зафиксировать изменения</button>
+        <button class="commitChangesBtn">Зафиксировать изменения</button>
       </div>
     </div>
 
@@ -311,6 +315,8 @@
         <img src="./images/instagramIcon.svg" alt="">
       </div>
     </div>
+
     <script src="./main.js"></script>
+    <script src="./upload.js"></script>
   </body>
 </html>

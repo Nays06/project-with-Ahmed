@@ -321,7 +321,7 @@
                 localUsers[i].password == entrancePassword.value
               ) {
                 checkUser = true;
-                sessionStorage.setItem("currentUser", JSON.stringify(localUsers[i]));
+                sessionStorage.setItem("userId", localUsers[i].id);
               }
             }
             if (checkUser) {
