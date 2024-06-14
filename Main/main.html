@@ -53,8 +53,8 @@
           <a href="">Зарабатывай</a>
         </nav>
         <div class="user">
-          <span id="userName"></span>
-          <div class="avatar"><img src="./images/profileImg.svg" alt=""></div>
+          <span class="userName"></span>
+          <div class="avatar"><img src="" class="avatarImg"></div>
         </div>
       </div>
       <div class="headBlock2">
@@ -80,12 +80,36 @@
      </div>
     </header>
 
+    <div class="profileBlock_background" id="profileBack">
+      <div class="profileBlock">
+        <h3>Профиль:</h3>
+        <img src="./images/cross.svg" id="closeProfile">
+        <div class="profileForm_user">
+          <div class="profileFrom_avatar"><img src="" class="avatarImg"></div>
+          <span class="userName"></span>
+        </div>
+        <input type="file" class="changeAvatar">
+        <div class="user_info">
+          <div>Ваш email:  <span class="email"></span></div> <a class="changeEmail">Изменить почту</a>
+        </div>
+        <button>Зафиксировать изменения</button>
+      </div>
+    </div>
+
     <div class="slider">
       <div class="arrowLeft">
         <img src="./images/arrowLeftImg.svg" alt="" />
       </div>
       <div class="slide" id="firstSlide">
         <img src="./images/slideImg1.png" class="slideImg" />
+        <div class="slide_information">
+          <h3>
+            Покорите вершину без шума и пыли. Перехитрите копов и участвуйте в 
+            еженедельных квалификационных заездах, чтобы добраться до Гранд-заезда
+             — главной уличной гонки. Заполните свой гараж уникальными модифицированными
+            машинами и покажите на улицах класс.
+          </h3>
+        </div>
       </div>
       <div class="slide">
         <img src="./images/slideImg2.png" class="slideImg" />
@@ -110,6 +134,15 @@
       </div>
       <div class="slide">
         <img src="./images/slideImg3.png" class="slideImg" />
+        <div class="slide_information">
+          <h3>
+            Компьютерная игра серии Need for Speed в жанре аркадных автогонок, 
+            разработанная студией Ghost Games и изданная компанией Electronic
+             Arts для игровых приставок PlayStation 4 и Xbox One в ноябре 2015
+              года. Выход игры на персональные компьютеры состоялся в марте 2016
+               года[2]. Это двадцать вторая часть серии Need for Speed.
+          </h3>
+        </div>
       </div>
       <div class="arrowRight">
         <img src="./images/arrowRightImg.svg" alt="" />
@@ -124,6 +157,7 @@
         <div class="counter" id="counter3"></div>
       </div>
     </div>
+
     <main>
       <div class="mainBlock1">
         <h1>Top <img src="./images/lightning.svg" style="width: 1.2%" /> 4</h1>
@@ -191,7 +225,7 @@
             </div>
               <span class="datePublication">20.04.2024</span>
               <p class="feedback">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellat illum necessitatibus, deleniti quibusdam quo!</p>
-              <p class="userName">Amart</p>
+              <p class="feedbackUserName">Amart</p>
           </div>
         </div>
       </div>
@@ -199,7 +233,7 @@
 
     <div class="addFeedBack_background" id="feedbackForm">
       <div class="addFeedbackFrom">
-        <img src="./images/cross.svg" id="cross">
+        <img src="./images/cross.svg" id="closeFeedbackFrom">
         <h3>Заполните форму</h3>
         <label for="">Оценка:</label>
         <input id="estimationInp" type="text" maxlength="1">

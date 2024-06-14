@@ -10,6 +10,14 @@ body {
 header {
   width: 100%;
   border-bottom: solid 1px rgb(56, 56, 56);
+
+  a {
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  a:hover {
+    color: #77be1d;
+  }
 }
 .headBlock_childBlock {
   max-width: 1400px;
@@ -88,24 +96,77 @@ nav {
   grid-template-columns: repeat(5, 1fr);
   gap: 6px;
 }
-a {
-  text-decoration: none;
-  transition: all 0.3s;
-}
-a:hover {
-  color: #77be1d;
-}
+
 .user {
   display: flex;
   justify-content: right;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 .avatar {
   height: 34px;
   width: 34px;
-  background-color: grey;
   border-radius: 50%;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.profileBlock_background{
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  opacity: 0;
+  transition: all 0.2s;
+}
+.profileBlock{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #0c061f;
+  width: 380px;
+  height: 380px;
+  border-radius: 12px;
+  padding: 20px;
+  gap: 20px;
+
+  h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+.profileForm_user{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  gap: 8px;
+}
+.profileFrom_avatar{
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.email{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.changeEmail{
+  color: #77be1d;
+  cursor: pointer;
 }
 
 .headBlock2 {
@@ -671,7 +732,7 @@ main {
   right: 0;
   color: #3d394a;
 }
-.userName {
+.feedbackUserName {
   color: #3d394a;
   position: absolute;
   bottom: 0;
@@ -754,7 +815,7 @@ main {
     border: solid 1px #3d394a;
   }
 }
-#cross {
+#closeFeedbackFrom, #closeProfile {
   width: 4%;
   position: absolute;
   top: 20px;

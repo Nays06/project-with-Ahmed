@@ -239,7 +239,6 @@
 
       function addUser() {
         const localUsers = JSON.parse(localStorage.getItem("users"));
-        let userName;
         if (!localUsers) {
           const userId = users.length;
           const user = {
@@ -253,7 +252,7 @@
           userName = registUsername.value
           
           window.location.href = "./Main/main.html";
-          sessionStorage.setItem("username", userName);
+          sessionStorage.setItem("userId", userId + 1);
 
           localStorage.setItem("users", JSON.stringify(users));
           registError.innerHTML = "";
@@ -273,7 +272,7 @@
           userName = registUsername.value
 
           window.location.href = "./Main/main.html";
-          sessionStorage.setItem("username", userName);
+          sessionStorage.setItem("userId", userId + 1);
 
           localStorage.setItem("users", JSON.stringify(localUsers));
           registError.innerHTML = "";
@@ -313,7 +312,6 @@
 
           const localUsers = JSON.parse(localStorage.getItem("users"));
           let checkUser = false;
-          let userName;
           if (!localUsers) {
             entranceError.innerHTML = "Пользователь не найден";
           } else {
@@ -323,12 +321,11 @@
                 localUsers[i].password == entrancePassword.value
               ) {
                 checkUser = true;
-                userName = entranceUsername.value;
+                sessionStorage.setItem("currentUser", JSON.stringify(localUsers[i]));
               }
             }
             if (checkUser) {
             window.location.href = "./Main/main.html";
-            sessionStorage.setItem("username", userName);
 
             entranceError.innerHTML = "";
             registError.innerHTML = "";

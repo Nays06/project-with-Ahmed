@@ -1,7 +1,58 @@
 // UserName
-const userName = document.getElementById("userName");
-const sessionUserName = sessionStorage.getItem("username");
-userName.innerHTML = sessionUserName;
+const localUsers = JSON.parse(localStorage.getItem("users"));
+const userId = sessionStorage.getItem("userId");
+let currentUser;
+
+function getCurrentUser(){
+  for(let i = 0; i < localUsers.length; i++){
+    if(localUsers[i].id == userId){
+      currentUser = localUsers[i];
+    }
+  }
+};
+getCurrentUser();
+
+const userName = document.querySelectorAll(".userName");
+
+userName[0].innerHTML = currentUser.username;
+userName[1].innerHTML = currentUser.username;
+
+const avatarImg = document.querySelectorAll(".avatarImg");
+if(currentUser.avatarSrc == null){
+  avatarImg[0].src = "./images/profileImg.svg";
+  avatarImg[1].src = "./images/profileImg.svg";
+}else{
+  avatarImg[0].src = currentUser.avatarSrc;
+  avatarImg[1].src = currentUser.avatarSrc;
+}
+
+const email = document.querySelector(".email");
+email.innerHTML = currentUser.email;
+
+// Profile
+const user = document.querySelector(".user");
+const closeProfile = document.getElementById("closeProfile");
+const profileBack = document.getElementById("profileBack");
+
+user.addEventListener("click", () => {
+  profileBack.style.display = "flex";
+  setTimeout(() => {
+    profileBack.style.opacity = 1;
+  }, 100)
+});
+
+closeProfile.addEventListener("click", () => {
+  profileBack.style.opacity = 0;
+  setTimeout(() => {
+    profileBack.style.display = "none";
+  }, 100)
+});
+
+const changeAvatar = document.querySelector(".changeAvatar");
+
+
+
+
 // create product cards script//
 const productCards = [
   {
@@ -388,6 +439,8 @@ langAndCurren[1].addEventListener("click", () => {
   }
 });
 
+const currency = document.querySelectorAll(".currency")
+
 const dollarBtns = document.querySelectorAll(".dollarBtn");
 const euroBtns = document.querySelectorAll(".euroBtn");
 const rubleBtns = document.querySelectorAll(".rubleBtn");
@@ -401,6 +454,10 @@ dollarBtns.forEach(btn => {
     allProductCards.forEach(card => {
       card.remove();
     })
+    currency[0].innerHTML = "$";
+    currency[1].innerHTML = "$";
+
+
     dollarBtns[0].style.backgroundColor = "#77be1d";
     dollarBtns[1].style.backgroundColor = "#77be1d";
 
@@ -426,6 +483,9 @@ euroBtns.forEach(btn => {
     allProductCards.forEach(card => {
       card.remove();
     })
+    currency[0].innerHTML = "€";
+    currency[1].innerHTML = "€";
+
     euroBtns[0].style.backgroundColor = "#77be1d";
     euroBtns[1].style.backgroundColor = "#77be1d";
 
@@ -451,6 +511,9 @@ rubleBtns.forEach(btn => {
     allProductCards.forEach(card => {
       card.remove();
     })
+    currency[0].innerHTML = "₽";
+    currency[1].innerHTML = "₽";
+
     rubleBtns[0].style.backgroundColor = "#77be1d";
     rubleBtns[1].style.backgroundColor = "#77be1d";
 
@@ -579,19 +642,19 @@ addFeedbackBtn.addEventListener("click", () => {
   feedbackForm.style.display = "flex";
   setTimeout(() => {
     feedbackForm.style.opacity = "1";
-  }, 200)
+  }, 100)
 })
 
-const cross = document.getElementById("cross");
-cross.addEventListener("click", () => {
+const closeFeedbackFrom = document.getElementById("closeFeedbackFrom");
+closeFeedbackFrom.addEventListener("click", () => {
   feedbackForm.style.opacity = "0";
   setTimeout(() => {
     feedbackForm.style.display = "none";
-  }, 200)
+  }, 100)
 })
 
 const feedbackUserName = document.getElementById("feedbackUserName");
-feedbackUserName.innerHTML = sessionUserName;
+feedbackUserName.innerHTML = currentUser.username;
 
 const estimationInp = document.getElementById("estimationInp");
 const feedbackInp = document.getElementById("feedbackInp");
@@ -624,7 +687,7 @@ publishBtn.addEventListener("click", () => {
   feedbackForm.style.opacity = "0";
   setTimeout(() => {
     feedbackForm.style.display = "none";
-  }, 200)
+  }, 100)
 });
 
 // Search
@@ -692,6 +755,9 @@ document.addEventListener("keypress", (event) => {
       }
     }
 
-    break
+    break;
   }
-})
+});
+
+
+
