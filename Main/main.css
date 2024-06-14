@@ -159,12 +159,16 @@ a:hover {
 
 /* Search product cards styles */
 .searchProductCard {
-  padding: 10px;
+  padding: 16px;
   position: relative;
   display: flex;
   gap: 20px;
-  border-top: solid 1px #555555;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.4s;
+}
+.searchProductCard:hover{
+  background-color: #06030f;
 }
 .searchCardImg {
   width: 10%;
@@ -198,7 +202,7 @@ a:hover {
   gap: 10px;
   position: absolute;
   top: 25%;
-  right: 0;
+  right: 16px;
 }
 .addBasketSearchBtn {
   height: auto;

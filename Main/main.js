@@ -278,7 +278,7 @@ function createProductCards() {
                                       <div class="topBlock" id="topBlock${i}">Top <img src="./images/lightning.svg" alt=""> 4</div>
                                     </div>
                                     <button id="addCardBtn${i}" class="addCardBtn">В корзину</button>
-                                    <button id="addFavouritesBtn${i}" class="addFavouritesBtn"><img src="./images/likeImg.svg"></button>
+                                    <button id="addFavouritesBtn${i}" class="addFavouritesBtn"><img class="likeImg" src="./images/likeImg.svg"></button>
                                     <div class="productCard_podBlock1">
                                         <span class="product_priceWithDiscount">${productCards[i].priceWithDiscount}</span>
                                         <span class="product_discount">${productCards[i].discount}</span>
@@ -547,15 +547,26 @@ createBlogCards();
 function goToTheProductPage(){
     const productCardsToTheLink = document.querySelectorAll(".productCard");
     productCardsToTheLink.forEach(productCard => {
-    productCard.addEventListener("click", () => {
-      localStorage.setItem("currentProductInGames", productCard.querySelector(".productName").textContent)
-      location.href = "../страница товара/index.html";
+    productCard.addEventListener("click", (event) => {
+      if(
+        !event.target.classList.contains("addFavouritesBtn") && !event.target.classList.contains("likeImg") &&
+        !event.target.classList.contains("addCardBtn")
+      ){
+        localStorage.setItem("currentProductInGames", productCard.querySelector(".productName").textContent)
+        location.href = "../страница товара/index.html";
+      }
+      
     });
     const searchProductCards = document.querySelectorAll(".searchProductCard");
     searchProductCards.forEach(searchProductCard => {
-      searchProductCard.addEventListener("click", () => {
-        localStorage.setItem("currentProductInGames", searchProductCard.querySelector(".searchCardName").textContent);
-        location.href = "../страница товара/index.html";
+      searchProductCard.addEventListener("click", (event) => {
+        if(
+          !event.target.classList.contains("addBasketSearchBtn") && !event.target.classList.contains("searchBasketImg") &&
+          !event.target.classList.contains("addFavouritesSearchBtn") && !event.target.classList.contains("searchFavoritesImg")
+        ){
+          localStorage.setItem("currentProductInGames", searchProductCard.querySelector(".searchCardName").textContent)
+          location.href = "../страница товара/index.html";
+        }
       })
     });
   });
@@ -642,14 +653,14 @@ document.addEventListener("keypress", (event) => {
 
       for(let i = 0; i < productCards.length; i++){
         if (check.test(productCards[i].productName) && !productCards[i].search){
-          searchBlock.style.padding = "20px"; 
+          searchBlock.style.padding = "10px"; 
           const searchProductCard = document.createElement("div");
           searchProductCard.className = "searchProductCard";
           searchProductCard.id = `searchProductCard${i}`;
           searchProductCard.innerHTML =  `<img class="searchCardImg" src="${productCards[i].imgSrc}">
                                           <div class="searchCardAddBtns">
-                                            <button id="addBasketSearchBtn${i}" class="addBasketSearchBtn"><img src="./images/searchBasketImg.svg"></button>
-                                            <button id="addFavouritesSearchBtn${i}" class="addFavouritesSearchBtn"><img src="./images/searchFavoritesImg.svg"></button>
+                                            <button id="addBasketSearchBtn${i}" class="addBasketSearchBtn"><img class="searchBasketImg" src="./images/searchBasketImg.svg"></button>
+                                            <button id="addFavouritesSearchBtn${i}" class="addFavouritesSearchBtn"><img class="searchFavoritesImg" src="./images/searchFavoritesImg.svg"></button>
                                           </div>
                                           <div class="seardchCardInfo">
                                             <p class="searchCardName">${productCards[i].productName}</p>
@@ -676,7 +687,7 @@ document.addEventListener("keypress", (event) => {
         }
       }
       if(!nothingCheck){
-        searchBlock.style.padding = "20px"; 
+        searchBlock.style.padding = "10px"; 
         searchBlock.innerHTML = "<h2>По вашему запросу ничего не найдено</h2>";
       }
     }
