@@ -1,13 +1,22 @@
-const userName = document.getElementById("userName");
-const sessionUserName = sessionStorage.getItem("username");
-userName.innerHTML = sessionUserName;
-
-
 document.title = `Playnchill | ${localStorage.getItem("currentProductInGames")}`
 
 function toMain(){
     window.location = "../Main/main.html"
 }
+
+document.querySelector("#userName").innerHTML = JSON.parse(localStorage.getItem("users")).find(us => us.id == Number(sessionStorage.getItem("userId"))).username
+
+document.querySelector(".avatar img").src = "../node/media/profileImg.jpg"
+
+if(localStorage.getItem("productsInBasketInGames") != null && JSON.parse(localStorage.getItem("productsInBasketInGames")).length != 0){
+  document.querySelector(".uveda").style.display = "block"
+  document.querySelector(".uveda").textContent = JSON.parse(localStorage.getItem("productsInBasketInGames")).length
+  console.log(3234);
+}
+
+document.querySelectorAll(".saveBlock img")[1].addEventListener("click", () => {
+  window.location.href = `../корзина/index.html`
+})
 
 
 let products = [
@@ -152,6 +161,243 @@ let products = [
         },
         main_img: "img-main-AShortHike.jpg",
         img_video: "https://www.dropbox.com/scl/fi/9iil2ojcy5ecljlmtk372/SnapSave.io-A-Short-Hike-Trailer-1080p60.mp4?rlkey=myazh5spxgf3ircosjf3tuuuh&st=jgvj27n7&raw=1",
+    },
+    {
+        title: "Flower",
+        price: "350",
+        skidka: "10",
+        janr: "Приключения",
+        categories: ["Буст", "Origin"],
+        opisanie: `<div class="product-opisanie">
+                    <div class="product-opisanie-title">
+                        Полное погружение в }}}]
+                    </div>
+    
+                    <div class="product-opisanie-txt">
+                    В игре Flower природа, обычно служащая лишь фоном для развития сюжета, выступает на первый план, становясь, в некотором роде, главным героем игры. Игроку дается возможность уйти от стрессов и волнений повседневной жизни и отправиться в странствия по красочному и живописному миру, любоваться его красотами и разгадывать тайны.Вам предлагается роль... ветра. Управляя потоком воздуха, вы сможете играть лепестками цветов. Цели и маршрут путешествия меняются с каждым этапом, но все они связаны с полетом и взаимодействием с природой. Используя беспроводной контроллер SIXAXIS, игрок направляет полет лепестков и изменяет окружающий мир.Flower позволяет игрокам испытать неповторимые чувства и выбрать свой ритм жизни. Порой спокойная и пасторальная, а временами и хаотическая игра Flower для системы PS3 перенесет вас в невероятный интерактивный мир, равного которому вы еще не видели.
+                    </div>
+                   </div>`,
+        harakteristiki: {
+            "ОС": "64-разрядная Windows 10",
+            "Процессор": "Intel Core i7-3770",
+            "Оперативная память": "4 GB ОЗУ",
+            "Видеокарта": "GeForce GTX 750 Ti",
+            "DirectX": "11.0"
+        },
+        main_img: "img-main-Flower.jpg",
+        img_video: "https://www.dropbox.com/scl/fi/wn3pdj4nkia0mez33qc7m/SnapSave.io-Flower-Trailer.mp4?rlkey=dkaxfjks7s5w9g5fv6smwikx7&st=prn1vqt4&raw=1",
+    },
+    {
+        title: "Hohokum",
+        price: "499",
+        skidka: "15",
+        janr: "Аркада",
+        categories: ["Ключ", "Steam"],
+        opisanie: `<div class="product-opisanie">
+                    <div class="product-opisanie-title">
+                        Полное погружение в }}}]
+                    </div>
+    
+                    <div class="product-opisanie-txt">
+                    Необычная и красочная игра, в которой игрок управляет летающим существом, похожим на змею. Геймплей игры не имеет четких целей или заданий, а скорее предлагает игроку свободно исследовать разнообразные миры, взаимодействуя с окружающей средой и другими персонажами. Игра отличается своим художественным стилем, музыкальным сопровождением и атмосферой, которые создают ощущение расслабленности.
+                    </div>
+                   </div>`,
+        harakteristiki: {
+            "ОС": "64-разрядная Windows 10",
+            "Процессор": "Intel Core i7-3770",
+            "Оперативная память": "4 GB ОЗУ",
+            "Видеокарта": "GeForce GTX 750 Ti",
+            "DirectX": "11.0"
+        },
+        main_img: "img-main-Hohokum.jpg",
+        img_video: "https://www.dropbox.com/scl/fi/0v598upavf8vqlseu0brg/SnapSave.io-HOHOKUM-Steam-Trailer-1080p60.mp4?rlkey=7mn0q73tql4gd4fapouaql89z&st=mivwquu3&raw=1",
+    },
+    {
+        title: "The Witness",
+        price: "699",
+        skidka: "15",
+        janr: "Приключения",
+        categories: ["Ключ", "Steam"],
+        opisanie: `<div class="product-opisanie">
+                    <div class="product-opisanie-title">
+                        Полное погружение в }}}]
+                    </div>
+    
+                    <div class="product-opisanie-txt">
+                    Геймплей The Witness сосредоточен на решении многочисленных головоломок, основанных на принципах лабиринтов и сеток. Игроки должны исследовать остров и находить различные панели, на которых представлены головоломки. Решение каждой головоломки открывает новые участки острова, предоставляя доступ к дополнительным задачам и секретам. Головоломки становятся всё более сложными по мере продвижения игрока, добавляя различные правила и усложнения.
+                    </div>
+                   </div>`,
+        harakteristiki: {
+            "ОС": "Windows 7",
+            "Процессор": "2,4 ГГц",
+            "Оперативная память": "8 GB ОЗУ",
+            "Видеокарта": "GeForce 780",
+            "Место на диске": "5 ГБ",
+            "DirectX": "10.0"
+        },
+        main_img: "img-main-TheWitness.jpg",
+        img_video: "https://www.dropbox.com/scl/fi/a8m3phre9thsmvkyx5mku/SnapSave.io-The-Witness-Trailer-1080p.mp4?rlkey=nfy6r0q9u1yj3chgrltggrx8b&st=njqsursg&raw=1",
+    },
+    {
+        title: "Eastshade",
+        price: "999",
+        skidka: "10",
+        janr: "Головоломка",
+        categories: ["Ключ", "EpicGames"],
+        opisanie: `<div class="product-opisanie">
+                    <div class="product-opisanie-title">
+                        Полное погружение в }}}]
+                    </div>
+    
+                    <div class="product-opisanie-txt">
+                    Красочная адвенчура в открытом мире, в который вы берете на себя роль художника, путешествующего по острову Ист-Шейд. Вам предстоит знакомиться с местными жителями, заводить друзей и помогать тем, кто в этом нуждается, решать загадки и исследовать остров. Ваши действия могут повлиять на мир вокруг вас.
+                    </div>
+                   </div>`,
+        harakteristiki: {
+            "ОС": "64-разрядные Windows 10",
+            "Процессор": "Intel i5-750",
+            "Оперативная память": "6 GB ОЗУ",
+            "Видеокарта": "Nvidia GTX 560 Ti",
+            "Место на диске": "2 ГБ",
+            "DirectX": "11.0"
+        },
+        main_img: "img-main-Eastshade.jpg",
+        img_video: "https://www.dropbox.com/scl/fi/2jvitlwggiabp3f8j3n5t/SnapSave.io-Eastshade-Official-Trailer-2-1080p.mp4?rlkey=wh7u6pqt9nnneml3wjrbfhznv&st=50v0uox2&raw=1",
+    },
+    {
+        title: "Little Big Planet",
+        price: "149",
+        skidka: "25",
+        janr: "Головоломка",
+        categories: ["Ключ", "EpicGames"],
+        opisanie: `<div class="product-opisanie">
+                    <div class="product-opisanie-title">
+                        Полное погружение в }}}]
+                    </div>
+    
+                    <div class="product-opisanie-txt">
+                    LittleBigPlanet представляет собой приключение главного героя — маленького существа из ткани по прозвищу Sackboy или Sackgirl, которое должно преодолевать различные уровни, а также решать всевозможные головоломки. Игроки могут настраивать внешность своих персонажей, используя различные аксессуары и наряды, которые можно найти во время прохождения игры.
+                    <br>
+                    Однако, самое главное в LittleBigPlanet — это возможность игроков создавать свои собственные уровни и контент. Игра предлагает мощный и гибкий инструмент для создания уровней, который позволяет пользователям разрабатывать разнообразные головоломки, препятствия и даже мини-игры. Созданные уровни могут быть опубликованы в сети для других игроков.
+                    <br>
+                    LittleBigPlanet также предлагает совместный режим игры, в котором до четырёх игроков могут объединиться, чтобы вместе проходить уровни, решать головоломки и соревноваться в мини-играх. Режим совместной игры доступен как локально, так и через интернет.
+                    </div>
+                   </div>`,
+        harakteristiki: {
+            "ОС": "64-разрядные Windows 10",
+            "Процессор": "Intel i5-750",
+            "Оперативная память": "4 GB ОЗУ",
+            "Видеокарта": "Nvidia GTX 560 Ti",
+            "Место на диске": "2 ГБ",
+            "DirectX": "11.0"
+        },
+        main_img: "img-main-LittleBigPlanet.jpg",
+        img_video: "https://www.dropbox.com/scl/fi/72udk4qvgaqxbep9l5dur/SnapSave.io-LittleBigPlanet-Trailer-2008.mp4?rlkey=x6jn7nk7ozvo34nqq6xosi68o&st=26eoa70s&raw=1",
+    },
+    {
+        title: "Unravel",
+        price: "2300",
+        skidka: "15",
+        janr: "Пазл-платформер",
+        categories: ["Буст", "Origins"],
+        opisanie: `<div class="product-opisanie">
+                    <div class="product-opisanie-title">
+                        Полное погружение в }}}]
+                    </div>
+    
+                    <div class="product-opisanie-txt">
+                    Умилительный платформер о вязаном котенке по имени Ярни от шведской студии Coldwood Interactive.
+                    </div>
+                   </div>`,
+        harakteristiki: {
+            "ОС": "64-разрядные Windows 10",
+            "Процессор": "Intel Core 2 Quad 2,7 ГГц",
+            "Оперативная память": "8 GB ОЗУ",
+            "Видеокарта": "NVIDIA GeForce 9600",
+            "Звук": "DirectX-совместимая",
+            "Место на диске": "2,5 ГБ",
+            "DirectX": "11.0"
+        },
+        main_img: "img-main-Unravel.jpg",
+        img_video: "https://www.dropbox.com/scl/fi/bboqez7hvyu1bm9vjfva5/SnapSave.io-Unravel_-Official-Story-Trailer-1080p60.mp4?rlkey=1iwxz8i39g75f5ketzghxkouu&st=tqupdqub&raw=1",
+    },
+    {
+        title: "Seasons after Fall",
+        price: "799",
+        skidka: "15",
+        janr: "Приключения",
+        categories: ["Ключ", "Steam"],
+        opisanie: `<div class="product-opisanie">
+                    <div class="product-opisanie-title">
+                        Полное погружение в }}}]
+                    </div>
+    
+                    <div class="product-opisanie-txt">
+                    Seasons After Fall - это 2D-платформер-головоломка, которая позволит вам погрузиться в увлекательную вселенную и исследовать землю, управляемую магией и природой.
+                    </div>
+                   </div>`,
+        harakteristiki: {
+            "ОС": "64-разрядные Windows 10",
+            "Процессор": "Intel Core 2 Duo E4500 2,2 ГГц",
+            "Оперативная память": "4 GB ОЗУ",
+            "Видеокарта": "NVIDIA GeForce GT 640",
+            "Место на диске": "4 ГБ",
+            "DirectX": "11.0"
+        },
+        main_img: "img-main-SeasonsafterFall.jpg",
+        img_video: "https://www.dropbox.com/scl/fi/nszxuxqiwld9i5jrgiyrz/SnapSave.io-Seasons-After-Fall-Teaser-Trailer.mp4?rlkey=8ssjpbd3jujn9qfhflo41zfbf&st=uih24p6z&raw=1",
+    },
+    {
+        title: "Yonder: The Cloud Catcher Chronicle",
+        price: "599",
+        skidka: "10",
+        janr: "Приключения",
+        categories: ["Ключ", "Steam"],
+        opisanie: `<div class="product-opisanie">
+                    <div class="product-opisanie-title">
+                        Полное погружение в }}}]
+                    </div>
+    
+                    <div class="product-opisanie-txt">
+                    Один остров, 8 климатических зон, каждая из которых отличается собственными обитателями и неповторимым ландшафтом. Но на весь этот райский уголок надвигается тьма и придется сильно поторопиться, иначе этот райский уголок навсегда исчезнет. 
+                    </div>
+                   </div>`,
+        harakteristiki: {
+            "ОС": "64-разрядные Windows 10",
+            "Процессор": "Intel Core i7- 3770 3.5 ГГц",
+            "Оперативная память": "8 GB ОЗУ",
+            "Видеокарта": "NVIDIA GeForce GTX 1060",
+            "Место на диске": "4 ГБ",
+            "DirectX": "11.0"
+        },
+        main_img: "img-main-YonderTheCloudCatcherChronicle.jpg",
+        img_video: "https://www.dropbox.com/scl/fi/9omfx6851ngg6d2z8rzoz/SnapSave.io-Yonder_-The-Cloud-Catcher-Chronicles-Announcement-Trailer-1080p.mp4?rlkey=z7q3don41cp1gf2omzp2rlxbe&st=tqb40n72&raw=1",
+    },
+    {
+        title: "Ori and the Blind Forest",
+        price: "999",
+        skidka: "50",
+        janr: "Приключения",
+        categories: ["Аккаунт", "Steam"],
+        opisanie: `<div class="product-opisanie">
+                    <div class="product-opisanie-title">
+                        Полное погружение в }}}]
+                    </div>
+    
+                    <div class="product-opisanie-txt">
+                    Атмосферный платформер с бесшовным миром, рассказывающий о маленьком существе по имени Ори, пытающемся спасти свой сказочный мир от абсолютного зла. Проект представляет собой эмоциональную историю о любви и самопожертвовании, а также о надежде, которая кроется в каждом из нас.
+                    </div>
+                   </div>`,
+        harakteristiki: {
+            "ОС": "64-разрядные Windows 10",
+            "Процессор": "Intel Core i5 2300",
+            "Оперативная память": "4 GB ОЗУ",
+            "Видеокарта": "GeForce GTX 550 Ti",
+            "Место на диске": "4 ГБ",
+            "DirectX": "11.0"
+        },
+        main_img: "img-main-OriandtheBlindForest.jpg",
+        img_video: "https://www.dropbox.com/scl/fi/04folg9kaayhgwjrgsydr/SnapSave.io-Ori-and-the-Blind-Forest-Trailer-1080p.mp4?rlkey=iozmia5gd874y2bmhxh5q1mgv&st=opl2wxw0&raw=1",
     }
 ]
 
@@ -174,16 +420,12 @@ document.querySelector(".product-tr2").getElementsByTagName("td")[0].textContent
 document.querySelector(".product-ostas-container").innerHTML = currentProduct[0].opisanie.replace("}}}]", currentProduct[0].title)
 
 document.querySelector(".product-img").querySelector("img").src = `img/${currentProduct[0].main_img}`
-document.body.style.backgroundImage = `url(img/bg-${currentProduct[0].title.trim().replaceAll(" ", "")}.jpg)`
+document.body.style.backgroundImage = `url(img/bg-${currentProduct[0].title.trim().replaceAll(" ", "").replaceAll(":", "")}.jpg)`
 
 window.onload = function() {
 document.querySelector("#videooo1").innerHTML = `<source src="${currentProduct[0].img_video}" class="product-video-source">
 Ваш браузер не поддерживает видео.`
 };
-
-
-
-
 
 document.querySelectorAll(".product-osta").forEach((elem) => {
     elem.addEventListener("click", () => {
@@ -364,14 +606,14 @@ function objectToTable(harakteristiki) {
 
 let c = 1
 document.querySelectorAll(".product-photo-video").forEach((elem) => {
-    elem.querySelector("img").src = `img/${currentProduct[0].title.trim().replaceAll(" ", "")}-dop${c}.jpg`
+    elem.querySelector("img").src = `img/${currentProduct[0].title.trim().replaceAll(" ", "").replaceAll(":", "")}-dop${c}.jpg`
     c++
 })
 
 c = 1
 
 document.querySelectorAll(".product-gallery-img").forEach((elem) => {
-    elem.src = `img/${currentProduct[0].title.trim().replaceAll(" ", "")}-dop${c}.jpg`
+    elem.src = `img/${currentProduct[0].title.trim().replaceAll(" ", "").replaceAll(":", "")}-dop${c}.jpg`
     c++
 })
 
@@ -393,7 +635,7 @@ function randomArr(array) {
 ads = randomArr(ads)
 
 function createProductCards() {
-    for (let i = 0; i < ads.length; i++) {
+    for (let i = 0; i < 4; i++) {
       const result = parseInt(ads[i].price.replace(/\s/g, ''), 10);
       const discount = (result * Number(ads[i].skidka)) / 100;
       const priceWithDiscount = result - discount;
@@ -460,66 +702,178 @@ allProductCards.forEach((productCard) => {
   });
 });
 
-document.querySelector(".addCardBtn").addEventListener("click", () => {
-    window.location = "../Main/main.html"
-})
+// document.querySelector(".addCardBtn").addEventListener("click", () => {
+//     window.location = "../Main/main.html"
+// })
 
 document.querySelectorAll(".productCard").forEach((el) => {
-    el.addEventListener("click", () => {
-        localStorage.setItem("currentProductInGames", el.querySelector(".productName").textContent)
-        location.href = "index.html"
+    el.addEventListener("click", (e) => {
+        if(e.target.className != "addCardBtn"){
+          localStorage.setItem("currentProductInGames", el.querySelector(".productName").textContent)
+          location.href = "index.html"
+        } else{
+          // console.log(el.closest(".productCard"));
+          const productImgContainer = el.closest(".productCard");
+          const saveBlock = document.querySelector(".saveBlock");
+          const productImg = e.currentTarget.querySelector(".productImg");
+          if (!productImg || !saveBlock) {
+              console.error('One of the elements were not found.');
+              return;
+          }
+          let cloned = productImg.cloneNode();
+          cloned.style.position = "absolute";
+          cloned.style.width = "30px";
+          cloned.style.height = "50px";
+          cloned.style.zIndex = "20";
+          cloned.style.borderRadius = "0";
+          // cloned.style.opacity = 0;
+          // cloned.style.left = `${productImg.getBoundingClientRect().left + window.scrollX}px`;
+          // cloned.style.top = `${productImg.getBoundingClientRect().top + window.scrollY}px`;
+          const targetX = (saveBlock.getBoundingClientRect().left + window.scrollX - (productImg.getBoundingClientRect().left + window.scrollX)) + 95;
+          const targetY = (saveBlock.getBoundingClientRect().top + window.scrollY - (productImg.getBoundingClientRect().top + window.scrollY))
+          const keyframes = `
+            @keyframes moveDownRightAndFlyToSaveBlock {
+              0% {
+                transform: translate(0, 0);
+                opacity: 0;
+              }
+              50% {
+                transform: translate(220px, 500px);
+                opacity: 1;
+              }
+              100% {
+                transform: translate(${targetX}px, ${targetY}px);
+                opacity: 1;
+              }
+            }
+          `;
+          const styleSheet = document.createElement("style");
+          styleSheet.type = "text/css";
+          styleSheet.innerText = keyframes;
+          document.head.appendChild(styleSheet);
+          productImgContainer.appendChild(cloned);
+          requestAnimationFrame(() => {
+              cloned.style.animation = 'moveDownRightAndFlyToSaveBlock 2s forwards';
+          });
+          cloned.addEventListener('animationend', function() {
+              cloned.remove();
+              document.head.removeChild(styleSheet);
+          });
+        
+        
+          if (localStorage.getItem("productsInBasketInGames") == null) {
+            localStorage.setItem("productsInBasketInGames", JSON.stringify([
+                {
+                    title: e.currentTarget.querySelector(".productName").textContent,
+                    price: e.currentTarget.querySelector(".product_priceWithDiscount").textContent,
+                    skidka: e.currentTarget.querySelector(".product_discount").textContent,
+                    oldPrice: e.currentTarget.querySelector(".product_priceWithoutDiscount").textContent,
+                    count: 1
+                }
+            ]));
+          } else {
+            let products = JSON.parse(localStorage.getItem("productsInBasketInGames"));
+              let existingProduct = products.find(item => item.title === e.currentTarget.querySelector(".productName").textContent);
+              if (existingProduct === undefined) {
+                  products.push({
+                    title: e.currentTarget.querySelector(".productName").textContent,
+                    price: e.currentTarget.querySelector(".product_priceWithDiscount").textContent,
+                    skidka: e.currentTarget.querySelector(".product_discount").textContent,
+                    oldPrice: e.currentTarget.querySelector(".product_priceWithoutDiscount").textContent,
+                    count: 1
+                  });
+              } else {
+                  existingProduct.count += 1;
+              }
+              localStorage.setItem("productsInBasketInGames", JSON.stringify(products));
+          }
+        
+          setTimeout(() => {
+            document.querySelector(".uveda").style.display = "block"
+            document.querySelector(".uveda").textContent = JSON.parse(localStorage.getItem("productsInBasketInGames")).length
+          }, 2000);
+        }
+        // console.log(e.target.className);
     })    
 })
 
-document.querySelector(".product-buy").addEventListener("click", () => {
-    let cloned = document.querySelector(".product-img img").cloneNode(true); // Исправлено: добавленно true для копирования всех дочерних элементов
-    cloned.style.position = "absolute";
-    cloned.style.width = "30px";
-    cloned.style.opacity = 0;
-    // Получаем координаты, где элемент должен оказаться в конце анимации
-    const targetX = document.querySelector(".saveBlock").getBoundingClientRect().left - document.querySelector(".product-img").getBoundingClientRect().left + window.scrollX - 60;
-    const targetY = document.querySelector(".saveBlock").getBoundingClientRect().top - document.querySelector(".product-img").getBoundingClientRect().top + window.scrollY - 210;
-      // Создаем стиль для анимации с текущими координатами
-  const keyframes = `
-  @keyframes moveDownRightAndFlyToSaveBlock {
-    0% {
-      transform: translate(0, 0);
-      opacity: 0;
-    }
-    50% {
-      transform: translate(50px, 250px); /* Подъем вправо и вниз */
-      opacity: 1;
-    }
-    100% {
-      transform: translate(${targetX}px, ${targetY}px);
-      opacity: 1; /* Если вы хотите сохранить изображение видимым */
-    }
-  }
-`;
-// Создаем и вставляем стилевой элемент со сгенерированными ключевыми кадрами
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = keyframes;
-document.head.appendChild(styleSheet);
-// Добавляем клонированный элемент в DOM дерево
-document.querySelector(".product-img").appendChild(cloned);
-// Планируем анимацию для следующего кадра после рефлоу/репейнта
-requestAnimationFrame(() => {
-  cloned.style.animation = 'moveDownRightAndFlyToSaveBlock 2s forwards';
-});
-// Обрабатываем завершение анимации
-cloned.addEventListener('animationend', function() {
-  // Перемещаем клонированный элемент в .saveBlock и очищаем стили
+document.querySelector(".product-to-back").addEventListener("click", () => {
+  const productImgContainer = document.querySelector(".product-img");
   const saveBlock = document.querySelector(".saveBlock");
-  cloned.remove();
-  cloned.style.position = '';
-  cloned.style.top = '';
-  cloned.style.left = '';
-  cloned.style.animation = '';
-  cloned.style.opacity = '';
-  // Удаляем временные стили анимации
-  document.head.removeChild(styleSheet);
-});
+  const productImg = productImgContainer.querySelector("img");
+  if (!productImg || !saveBlock) {
+      console.error('One of the elements were not found.');
+      return;
+  }
+  let cloned = productImg.cloneNode(true);
+  cloned.style.position = "absolute";
+  cloned.style.width = "30px";
+  cloned.style.opacity = 0;
+  cloned.style.left = `${productImg.getBoundingClientRect().left + window.scrollX}px`;
+  cloned.style.top = `${productImg.getBoundingClientRect().top + window.scrollY}px`;
+  const targetX = (saveBlock.getBoundingClientRect().left + window.scrollX - (productImg.getBoundingClientRect().left + window.scrollX)) + 95;
+  const targetY = (saveBlock.getBoundingClientRect().top + window.scrollY - (productImg.getBoundingClientRect().top + window.scrollY))
+  const keyframes = `
+    @keyframes moveDownRightAndFlyToSaveBlock {
+      0% {
+        transform: translate(0, 0);
+        opacity: 0;
+      }
+      50% {
+        transform: translate(220px, 500px);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(${targetX}px, ${targetY}px);
+        opacity: 1;
+      }
+    }
+  `;
+  const styleSheet = document.createElement("style");
+  styleSheet.type = "text/css";
+  styleSheet.innerText = keyframes;
+  document.head.appendChild(styleSheet);
+  productImgContainer.appendChild(cloned);
+  requestAnimationFrame(() => {
+      cloned.style.animation = 'moveDownRightAndFlyToSaveBlock 2s forwards';
+  });
+  cloned.addEventListener('animationend', function() {
+      cloned.remove();
+      document.head.removeChild(styleSheet);
+  });
+
+
+  if (localStorage.getItem("productsInBasketInGames") == null) {
+    localStorage.setItem("productsInBasketInGames", JSON.stringify([
+        {
+            title: document.querySelector(".product-title").textContent,
+            price: document.querySelector(".product-now-price").textContent,
+            skidka: document.querySelector(".product-skidka").textContent,
+            oldPrice: document.querySelector(".product-old-price").textContent,
+            count: 1
+        }
+    ]));
+  } else {
+    let products = JSON.parse(localStorage.getItem("productsInBasketInGames"));
+      let existingProduct = products.find(item => item.title === document.querySelector(".product-title").textContent);
+      if (existingProduct === undefined) {
+          products.push({
+              title: document.querySelector(".product-title").textContent,
+              price: document.querySelector(".product-now-price").textContent,
+              skidka: document.querySelector(".product-skidka").textContent,
+              oldPrice: document.querySelector(".product-old-price").textContent,
+              count: 1
+          });
+      } else {
+          existingProduct.count += 1;
+      }
+      localStorage.setItem("productsInBasketInGames", JSON.stringify(products));
+  }
+
+  setTimeout(() => {
+    document.querySelector(".uveda").style.display = "block"
+    document.querySelector(".uveda").textContent = JSON.parse(localStorage.getItem("productsInBasketInGames")).length
+  }, 2000);
 });
 
 // Change language and currency script//

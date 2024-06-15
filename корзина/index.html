@@ -1,147 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../Favicon/favicon.ico" type="image/x-icon">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../Favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <title>Корзина</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+        <div class="headerBlock">
+          <div class="headBlock1">
+            <div class="langAndCurren">
+              <span class="lang">RU /</span>
+              <span class="currency">₽</span>
+              <img src="../страница товара/img/arrowImg.svg" class="arrowImg" />
+            </div>
+  
+            <div class="langAndCurrenChange" style="display: none">
+              <div class="changeLanguage">
+                <button class="changeBtn" style="background-color: #77be1d">
+                  Russian (RU)
+                </button>
+                <button class="changeBtn">English (EN)</button>
+              </div>
+              <div class="separator"></div>
+              <div class="changeCurrency">
+                <button class="changeBtn">$</button>
+                <button class="changeBtn">€</button>
+                <button class="changeBtn" style="background-color: #77be1d">
+                  ₽
+                </button>
+              </div>
+            </div>
+  
+            <a href="">Накопительный счет</a>
+            <nav>
+              <a href="">Отзывы</a>
+              <a href="">Гарантии</a>
+              <a href="">Как купить</a>
+              <a href="">Накопительная</a>
+              <a href="">Зарабатывай</a>
+            </nav>
+            <div class="user">
+              <span id="userName"></span>
+              <div class="avatar"><img src="" alt="ava"></div>
+            </div>
+          </div>
+          <div class="headBlock2">
+            <div class="logoBlock" onclick="toMain()">
+              <img src="../Main/images/logo.svg" alt="" />
+              <h1>Playnchill</h1>
+            </div>
+            <div class="searchBlock">
+              <input class="searchInp" type="text" placeholder="Поиск" />
+              <img src="../Main/images/searchImg.svg" alt="" />
+            </div>
+            <a class="free" href="">Бесплатно</a>
+            <div class="saveBlock">
+              <img src="../Main/images/favouritesImg.svg" alt="" />
+              <img src="../Main/images/basketImg.svg" alt="" />
+              <div class="uveda" style="display: none">0</div>
+            </div>
+          </div>
+        </div>
+    </header>
+
     <main>
-        <div class="basket-title">Корзина <span>1</span></div>
+      <div class="basket-title">Корзина <span></span></div>
 
-        <div class="basket-cont">
-            <div class="basket-card">
-                <div class="basket-card-img">
-                    <img src="../страница товара/img/img-main-Minecraft.jpg" alt="">
-                </div>
+      <div class="basket-cont none">
+        <div>
+            <div class="basket-cards"></div>
 
-                <div class="basket-card-cont">
-                    <div class="basket-card-title">Minecraft</div>
+            <div class="basket-sposobi-oplati">
+          <div class="basket-so-card">
+            <div class="basket-so-card-title">
+              <input type="radio" />
 
-                    <div class="basket-card-prices">
-                        <div class="basket-card-new-price">349 Р</div>
+              Электронные кошельки
+            </div>
 
-                        <div class="basket-card-skidka">-25%</div>
+            <div class="basket-so-card-imgs">
+              <img src="img/WebMoney_logo_blue 2 1.svg" alt="" />
 
-                        <div class="basket-card-old-price">599 Р</div>
+              <img
+                src="img/Logo_qiwi_rgb 1.svg"
+                alt=""
+                style="margin-left: 15px"
+              />
+            </div>
+          </div>
+
+          <div class="basket-so-card">
+            <div class="basket-so-card-title">
+              <input type="radio" />
+
+              Банковские карты
+            </div>
+
+            <div class="basket-so-card-imgs">
+              <img src="img/mastercard 2.svg" alt="" />
+
+              <img
+                src="img/Visa_Inc._logo 1.svg"
+                alt=""
+                style="margin-left: 15px"
+              />
+
+              <img
+                src="img/1920px-Mir-logo.SVG 1.svg"
+                alt=""
+                style="margin-left: 15px"
+              />
+            </div>
+          </div>
+
+          <div class="basket-so-card">
+            <div class="basket-so-card-title">
+              <input type="radio" />
+
+              Криптовалюта
+            </div>
+
+            <div class="basket-so-card-imgs">
+              <img src="img/ETHEREUM-YOUTUBE-PROFILE-PIC 1.svg" alt="" />
+
+              <img
+                src="img/2560px-Bitcoin_logo 1.svg"
+                alt=""
+                style="margin-left: 15px"
+              />
+            </div>
+          </div>
+
+          <div class="basket-so-card">
+            <div class="basket-so-card-title">
+              <input type="radio" />
+
+              Samsung pay
+            </div>
+
+            <div class="basket-so-card-imgs">
+              <img src="img/640px-Samsung_Pay_icon 1.svg" alt="" />
+            </div>
+          </div>
+            </div>
+        </div>
+
+        <div style="position: relative;">
+            <div class="basket-oformit-zakaz">
+                <div class="basket-oformit-zakaz-items_count">5 товаров</div>
+
+                <div class="basket-oformit-zakaz-total_price">4 999 Р</div>
+
+                <div class="basket-oformit-zakaz-but">Оформить заказ</div>
+
+                <div class="basket-oformit-zakaz-uslovia">
+                    <div class="basket-oformit-zakaz-uslovia-galochka">
+                        <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.12817 5.51281L8.23101 0L9 0.656414L3.12817 7L0 3.62051L0.768991 2.9641L3.12817 5.51281Z" fill="white"/>
+                        </svg>                            
                     </div>
-                    
-                    <div class="basket-card-dop-info">
-                        <span>Регион активации</span> Россия и страны СНГ
-                        <br><br>
-                        <span>Сервис активации</span> Steam
-                    </div>
-                </div>
 
-                <div class="basket-card-cont-2">
-                    <div class="basket-card-close">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.58377 6.99662L0 12.583L1.41388 13.9976L6.99765 8.41116L12.5814 13.9976L13.9953 12.583L8.41153 6.99662L13.9917 1.41382L12.5778 -0.000732422L6.99765 5.58207L1.41748 -0.000730515L0.00360323 1.41382L5.58377 6.99662Z" fill="white" fill-opacity="0.2"/>
-                            </svg>
-                            
-                    </div>
-
-                    <div class="basket-card-count">
-                        <div class="basket-card-count-minus">
-                            <svg width="15" height="3" viewBox="0 0 15 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 1.5L0 1.5" stroke="#1D1E23" stroke-width="2"/>
-                                </svg>
-                                
-                        </div>
-
-                        <div class="basket-card-count-znach">1</div>
-
-                        <div class="basket-card-count-plus">
-                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.5 15V0" stroke="#36373C" stroke-width="2"/>
-                                <path d="M15 7.5L0 7.5" stroke="#36373C" stroke-width="2"/>
-                                </svg>                                
-                        </div>
-                    </div>
-
-                    <div class="basket-card-like">
-                        <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.17875 2.47059C4.48377 2.47059 2.47619 4.45541 2.47619 6.69457C2.47619 7.78053 2.9447 8.84477 3.81685 9.64625L13 18.0853L22.1831 9.64625C23.0553 8.84478 23.5238 7.78053 23.5238 6.69457C23.5238 4.45541 21.5162 2.47059 18.8212 2.47059C17.5427 2.47059 16.3349 2.93827 15.4593 3.74289L13.8388 5.23214C13.3648 5.66772 12.6352 5.66772 12.1612 5.23214L10.5407 3.7429C9.66509 2.93828 8.45731 2.47059 7.17875 2.47059ZM0 6.69457C0 2.90358 3.31187 0 7.17875 0C9.05132 0 10.8656 0.682659 12.2182 1.92567L13 2.6441L13.7818 1.92566C15.1344 0.682658 16.9487 0 18.8212 0C22.6881 0 26 2.90358 26 6.69457C26 8.5044 25.2167 10.2173 23.8607 11.4635L13.8388 20.6733C13.3648 21.1089 12.6352 21.1089 12.1612 20.6733L2.13929 11.4635C0.783262 10.2173 0 8.5044 0 6.69457Z" fill="#1E1C27"/>
-                            </svg>
-                            
+                    <div class="basket-oformit-zakaz-uslovia-txt">
+                        Покупая данный товар, я подтверждаю,что ознакомился и согласен с <a href="#">условиями</a> и <a href="#">условия магазина</a>
                     </div>
                 </div>
             </div>
         </div>
+      </div>
     </main>
-</body>
+
+    <footer>
+        <div class="footerParentBlock">
+          <div class="footerBlock1">
+            <img src="../страница товара/img/payPalImg.svg" alt="" />
+            <img src="../страница товара/img/masterCardImg.svg" alt="" />
+            <img src="../страница товара/img/visaImg.svg" alt="" />
+            <img src="../страница товара/img/mirImg.svg" alt="" />
+            <img src="../страница товара/img/webMoneyImg.svg" alt="" />
+            <img src="../страница товара/img/payPalImg.svg" alt="" />
+            <img src="../страница товара/img/payPalImg.svg" alt="" />
+          </div>
+          <div class="footerBlock2">
+            <div class="footerBlock2_podBlock">
+              <h5>Окомпании</h5>
+              <p>О нас</p>
+              <p>Вакансии</p>
+              <p>Реквизиты</p>
+            </div>
+            <div class="footerBlock2_podBlock">
+              <h5>Договор оферты</h5>
+              <p>Каталог</p>
+              <p>Акции</p>
+              <p>Личный кабинет</p>
+            </div>
+            <div class="footerBlock2_podBlock">
+              <h5>Договор оферты</h5>
+              <p>Каталог</p>
+              <p>Акции</p>
+              <p>Личный кабинет</p>
+            </div>
+            <div class="footerBlock2_podBlock2">
+              <img src="../страница товара/img/footerImg1.svg" alt="" />
+              <img src="../страница товара/img/footerImg2.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="socialNetworkBlock">
+        <a href="">Правовая информация</a>
+        <p>Интернет-магазин игр «Playnchill» © 2022</p>
+        <div class="langAndCurren">
+          <span class="lang">RU /</span>
+          <span class="currency">₽</span>
+          <img src="../страница товара/img/arrowImg.svg" class="arrowImg" style="rotate: 180deg" />
+        </div>
+  
+        <div class="langAndCurrenChange2" style="display: none">
+          <div class="changeLanguage">
+            <button class="changeBtn" style="background-color: #77be1d">
+              Russian (RU)
+            </button>
+            <button class="changeBtn">English (EN)</button>
+          </div>
+          <div class="separator"></div>
+          <div class="changeCurrency">
+            <button class="changeBtn">$</button>
+            <button class="changeBtn">€</button>
+            <button class="changeBtn" style="background-color: #77be1d">₽</button>
+          </div>
+        </div>
+        <div class="socialNetwork_icons">
+          <img src="../страница товара/img/vkIcon.svg" alt="" />
+          <img src="../страница товара/img/discordIcon.svg" alt="" />
+          <img src="../страница товара/img/twitterIcon.svg" alt="" />
+          <img src="../страница товара/img/instagramIcon.svg" alt="" />
+        </div>
+      </div>
+
+    <script src="index.js"></script>
+  </body>
 </html>
-
-
-<script>
-    // Класс для представления узла бинарного дерева
-    class TreeNode {
-        constructor(key){
-           this.left = null // Левый потомок
-           this.right = null // Правый потомок
-           this.val = key // Значение узла
-        }
-
-    // Сложность, в среднем случае равна O(log n), а в худшем случае равна O(n)
- }
-
-    // // Функция для поиска узла с заданным ключом
-    // function search(root, key){
-    //     // Базовый случай: корень пустой или ключ совпадает с корнем
-    //     if(root == null || root.val === key){
-    //         return root
-    //     }
-    //     // Ключ больше значения корня, ищем в правом поддереве
-    //     if(root.val < key){
-    //         return search(root.right, key)
-    //     }
-    //     // Ключ меньше значения корня, ищем в левом поддереве
-    //     return search(root.left, key)
-    // }
-
-    // // Функция для вставки узла с заданным ключом
-    // function insert(root, key){
-    //     // Если дерево пустое, возвращаем новый узел
-    //     if(root === null){
-    //         return new TreeNode(key)
-    //     }
-    //     // Ключ меньше значения корня, вставляем в левое поддерево
-    //     if(key < root.val){
-    //         root.left = insert(root.left, key)
-    //     } else{
-    //         // Если ключ юольше или равен значению корня, вставляем в правое поддерево
-    //         root.right = insert(root.right, key)
-    //     }
-    //     return root
-    // }
-    
-    // // Функция для нахождения узла с минимальным значением
-    // function minValueNode(node){
-    //     let current = node
-    //     // Самое левое листовое значение будет минимальным
-    //     while (current.left !== null) {
-    //         current = current.left
-    //     }
-    //     return current
-    // }
-
-    // // Inorder обход (левое поддерево, корень, правое поддерево)
-    // function inorder(root){
-    //     if(root !== null){
-    //         inorder(root.left)
-    //         console.log(root.val);
-    //         inorder(root.right)
-    //     }
-    // }
-
-    // // Preorder обход (корень, левое поддерево,  правое поддерево)
-    // function preorder(root){
-    //     if(root !== null){
-    //         console.log(root.val);
-    //         preorder(root.left)
-    //         preorder(root.right)
-    //     }
-    // }
-</script>

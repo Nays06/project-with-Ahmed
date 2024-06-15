@@ -19,8 +19,8 @@ userName[1].innerHTML = currentUser.username;
 
 const avatarImg = document.querySelectorAll(".avatarImg");
 if(currentUser.avatarSrc == null){
-  avatarImg[0].src = "./images/profileImg.svg";
-  avatarImg[1].src = "./images/profileImg.svg";
+  avatarImg[0].src = "../node/media/profileImg.jpg";
+  avatarImg[1].src = "../node/media/profileImg.jpg";
 }else{
   avatarImg[0].src = currentUser.avatarSrc;
   avatarImg[1].src = currentUser.avatarSrc;
@@ -28,6 +28,18 @@ if(currentUser.avatarSrc == null){
 
 const email = document.querySelector(".email");
 email.innerHTML = currentUser.email;
+
+// Back
+if(localStorage.getItem("productsInBasketInGames") != null && JSON.parse(localStorage.getItem("productsInBasketInGames")).length != 0){
+  document.querySelector(".uveda").style.display = "block"
+  document.querySelector(".uveda").textContent = JSON.parse(localStorage.getItem("productsInBasketInGames")).length
+  console.log(3234);
+}
+
+document.querySelectorAll(".saveBlock img")[1].addEventListener("click", () => {
+  window.location.href = `../корзина/index.html`
+})
+// Back
 
 // Profile
 const user = document.querySelector(".user");
@@ -142,7 +154,7 @@ const productCards = [
     priceWithDiscount: "3400 Р",
     discount: "-15%",
     priceWithoutDiscount: "4000 Р",
-    productName: "THE WITNESS",
+    productName: "The Witness",
     categories: ["Ключ", "Аккаунт Steam"],
     search: false,
   },
@@ -220,7 +232,7 @@ const productCards = [
     priceWithDiscount: "3400 Р",
     discount: "-15%",
     priceWithoutDiscount: "4000 Р",
-    productName: "UNRAVEL",
+    productName: "Unravel",
     categories: ["Буст", "Origin"],
     search: false,
   },
@@ -677,7 +689,7 @@ publishBtn.addEventListener("click", () => {
   feedbackCard.innerHTML =`<div class="estimationBlock" id="estimationBlock${feedbackId}"></div>
                           <span class="datePublication">${currentDay}.0${currentMonth}.${currentYear}</span>
                           <p class="feedback">${feedbackInp.value}</p>
-                          <p class="userName">${sessionUserName}</p>`;
+                          <p class="userName">${currentUser.username}</p>`;
   document.querySelector(".feedbackCardsConteiner").appendChild(feedbackCard);
   for(let a = 0; a < estimationInp.value; a++){
     const estimationBlock = document.getElementById(`estimationBlock${feedbackId}`);
@@ -760,4 +772,142 @@ document.addEventListener("keypress", (event) => {
 });
 
 
+let abc;
 
+
+document.getElementById('fileInput').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        abc = e.target.result
+          document.querySelector('.profileFrom_avatar img').src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+  }
+});
+
+
+
+
+
+document.getElementById('uploadForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const fileInput = document.getElementById('fileInput');
+  const formData = new FormData();
+  formData.append('file', fileInput.files[0]);
+  fetch('/upload', {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('responseMessage').innerText = data.message;
+  })
+  .catch(error => {
+    console.error('Ошибка:', error);
+    document.getElementById('responseMessage').innerText = 'Ошибка загрузки файла';
+  });
+});
+
+
+
+document.querySelector(".commitChangesBtn").addEventListener("click", () => {
+  document.querySelector(".avatar img").src = abc
+
+  profileBack.style.opacity = 0;
+  setTimeout(() => {
+    profileBack.style.display = "none";
+  }, 100)
+})
+
+document.querySelectorAll(".productCard").forEach((el) => {
+  el.addEventListener("click", (e) => {
+      if(e.target.className != "addCardBtn"){
+        localStorage.setItem("currentProductInGames", el.querySelector(".productName").textContent)
+        location.href = "../страница товара/index.html"
+      } else{
+        // console.log(el.closest(".productCard"));
+        const productImgContainer = el.closest(".productCard");
+        const saveBlock = document.querySelector(".saveBlock");
+        const productImg = e.currentTarget.querySelector(".productImg");
+        if (!productImg || !saveBlock) {
+            console.error('One of the elements were not found.');
+            return;
+        }
+        let cloned = productImg.cloneNode();
+        cloned.style.position = "absolute";
+        cloned.style.width = "30px";
+        cloned.style.height = "50px";
+        cloned.style.zIndex = "20";
+        cloned.style.borderRadius = "0";
+        // cloned.style.opacity = 0;
+        // cloned.style.left = `${productImg.getBoundingClientRect().left + window.scrollX}px`;
+        // cloned.style.top = `${productImg.getBoundingClientRect().top + window.scrollY}px`;
+        const targetX = (saveBlock.getBoundingClientRect().left + window.scrollX - (productImg.getBoundingClientRect().left + window.scrollX)) + 95;
+        const targetY = (saveBlock.getBoundingClientRect().top + window.scrollY - (productImg.getBoundingClientRect().top + window.scrollY))
+        const keyframes = `
+          @keyframes moveDownRightAndFlyToSaveBlock {
+            0% {
+              transform: translate(0, 0);
+              opacity: 0;
+            }
+            50% {
+              transform: translate(220px, 500px);
+              opacity: 1;
+            }
+            100% {
+              transform: translate(${targetX}px, ${targetY}px);
+              opacity: 1;
+            }
+          }
+        `;
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = keyframes;
+        document.head.appendChild(styleSheet);
+        productImgContainer.appendChild(cloned);
+        requestAnimationFrame(() => {
+            cloned.style.animation = 'moveDownRightAndFlyToSaveBlock 2s forwards';
+        });
+        cloned.addEventListener('animationend', function() {
+            cloned.remove();
+            document.head.removeChild(styleSheet);
+        });
+      
+      
+        if (localStorage.getItem("productsInBasketInGames") == null) {
+          localStorage.setItem("productsInBasketInGames", JSON.stringify([
+              {
+                  title: e.currentTarget.querySelector(".productName").textContent,
+                  price: e.currentTarget.querySelector(".product_priceWithDiscount").textContent,
+                  skidka: e.currentTarget.querySelector(".product_discount").textContent,
+                  oldPrice: e.currentTarget.querySelector(".product_priceWithoutDiscount").textContent,
+                  count: 1
+              }
+          ]));
+        } else {
+          let products = JSON.parse(localStorage.getItem("productsInBasketInGames"));
+            let existingProduct = products.find(item => item.title === e.currentTarget.querySelector(".productName").textContent);
+            if (existingProduct === undefined) {
+                products.push({
+                  title: e.currentTarget.querySelector(".productName").textContent,
+                  price: e.currentTarget.querySelector(".product_priceWithDiscount").textContent,
+                  skidka: e.currentTarget.querySelector(".product_discount").textContent,
+                  oldPrice: e.currentTarget.querySelector(".product_priceWithoutDiscount").textContent,
+                  count: 1
+                });
+            } else {
+                existingProduct.count += 1;
+            }
+            localStorage.setItem("productsInBasketInGames", JSON.stringify(products));
+        }
+      
+        setTimeout(() => {
+          document.querySelector(".uveda").style.display = "block"
+          document.querySelector(".uveda").textContent = JSON.parse(localStorage.getItem("productsInBasketInGames")).length
+        }, 2000);
+      }
+      // console.log(e.target.className);
+  })    
+})

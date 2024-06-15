@@ -40,6 +40,7 @@ header img, header h1{cursor: pointer;}
     grid-template-columns: 0.3fr 0.4fr 1fr 0.4fr;
     text-align: center;
     gap: 10px;
+    width: 1400px;
 }
 .languages{
     display: flex;
@@ -48,11 +49,18 @@ header img, header h1{cursor: pointer;}
     gap: 4px;
 }
 .currency{
-    color: #77BE1D;
+  color: #77BE1D;
+}
+.langAndCurren {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
 }
 .arrowImg {
-    transition: all 0.2s;
-  }
+  transition: all 0.2s;
+}
 .langAndCurrenChange {
     position: absolute;
     top: 30px;
@@ -76,6 +84,21 @@ header img, header h1{cursor: pointer;}
     grid-template-columns: repeat(3, 1fr);
     gap: 4px;
   }
+
+.avatar {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
   .separator {
     height: 1px;
     width: 100%;
@@ -166,6 +189,22 @@ a:hover{
     align-items: center;
     gap: 10px;
 }
+
+.uveda{
+  display: none;
+    width: 15px;
+    height: 15px;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    color: #77BE1D;
+}
+
 
 main{
     max-width: 1400px;
@@ -672,7 +711,7 @@ font-weight: 400;
     align-items: center;
     opacity: 0;
     position: absolute;
-    top: 67%;
+    top: 69%;
     left: 8%;
     color: white;
     font-weight: 500;
