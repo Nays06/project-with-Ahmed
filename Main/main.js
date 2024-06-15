@@ -677,7 +677,7 @@ publishBtn.addEventListener("click", () => {
   feedbackCard.innerHTML =`<div class="estimationBlock" id="estimationBlock${feedbackId}"></div>
                           <span class="datePublication">${currentDay}.0${currentMonth}.${currentYear}</span>
                           <p class="feedback">${feedbackInp.value}</p>
-                          <p class="userName">${sessionUserName}</p>`;
+                          <p class="userName">${currentUser.username}</p>`;
   document.querySelector(".feedbackCardsConteiner").appendChild(feedbackCard);
   for(let a = 0; a < estimationInp.value; a++){
     const estimationBlock = document.getElementById(`estimationBlock${feedbackId}`);
